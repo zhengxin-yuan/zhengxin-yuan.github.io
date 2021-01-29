@@ -303,6 +303,17 @@ plt.savefig('Anatomy_of_a_figure.png')
 
 plt.show()
 ```
+___
+
+### 2.4. 期刊版面构造
+
+当然，除了科研图片的构造外，大家也应该知晓各个期刊的版面布局。给大家提供两个著名期刊的版面构造，如下图所示：
+
+{{< style "width: 100%; margin: 0 auto;" >}}
+{{< figure src="/images/learning/python-studying/plotfigure/pagelayout.png" title="Fig.5. 期刊版面的构造" >}}
+{{< /style >}}
+
+___
 
 ### 2.4. 自建样式
 
@@ -1080,9 +1091,10 @@ plt.show()
 
 展示一张用我的样式模板绘制出来的图片：
 {{< style "width: 80%; margin: 0 auto;" >}}
-{{< figure src="/images/learning/python-studying/plotfigure/mystyle.png" title="Fig.5. 展示样式" >}}
+{{< figure src="/images/learning/python-studying/plotfigure/mystyle.png" title="Fig.6. 展示样式" >}}
 {{< /style >}}
 
 ___
 
 ## 3. 样式的设置
+

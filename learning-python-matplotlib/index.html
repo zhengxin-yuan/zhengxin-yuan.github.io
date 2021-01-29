@@ -46,7 +46,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "http:\/\/example.org\/learning-python-matplotlib\/"
-        },"genre": "posts","keywords": "Python, 学习笔记, 科研绘图","wordcount":  7532 ,
+        },"genre": "posts","keywords": "Python, 学习笔记, 科研绘图","wordcount":  7601 ,
         "url": "http:\/\/example.org\/learning-python-matplotlib\/","datePublished": "2021-01-21T00:00:00+08:00","dateModified": "2021-01-28T00:00:00+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
             "@type": "Organization",
             "name": "yuanzhx","logo": "http:\/\/example.org\/images\/avatar.png"},"author": {
@@ -127,7 +127,7 @@
             <div class="toc-content always-active" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Python-Matplotlib-绘图篇</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>肥宅蟹老板</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E5%AD%A6%E4%B9%A0/"><i class="far fa-folder fa-fw"></i>学习</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-01-21">2021-01-21</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 7532 字&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-01-21">2021-01-21</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 7601 字&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 16 分钟&nbsp;</div>
         </div><div class="featured-image"><img
         class="lazyload"
@@ -153,6 +153,7 @@
         <li><a href="#21-绘图包的引入">2.1. 绘图包的引入</a></li>
         <li><a href="#22-默认格式">2.2. 默认格式</a></li>
         <li><a href="#23-图片构造">2.3. 图片构造</a></li>
+        <li><a href="#24-期刊版面构造">2.4. 期刊版面构造</a></li>
         <li><a href="#24-自建样式">2.4. 自建样式</a>
           <ul>
             <li><a href="#241-自建样式的使用">2.4.1. 自建样式的使用</a></li>
@@ -700,7 +701,17 @@
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </code></pre></td></tr></table>
 </div>
-</div><h3 id="24-自建样式">2.4. 自建样式</h3>
+</div><hr>
+<h3 id="24-期刊版面构造">2.4. 期刊版面构造</h3>
+<p>当然，除了科研图片的构造外，大家也应该知晓各个期刊的版面布局。给大家提供两个著名期刊的版面构造，如下图所示：</p>
+<div id="id-5"><figure>
+    <img src="/images/learning/python-studying/plotfigure/pagelayout.png"/> <figcaption>
+            <h4>Fig.5. 期刊版面的构造</h4>
+        </figcaption>
+</figure>
+</div>
+<hr>
+<h3 id="24-自建样式">2.4. 自建样式</h3>
 <h4 id="241-自建样式的使用">2.4.1. 自建样式的使用</h4>
 <p>其实，自建样式是非常之简单的！✌️</p>
 <p>只需要创建文件后缀名为<code>.mplstyle</code>的文件，并将它和绘图的<code>.py</code>文件放在相同的文件夹内，通过命令<code>plt.style.use(&quot;./yourstylename.mplstyle&quot;)</code>调用就行</p>
@@ -2230,9 +2241,9 @@
 </div>
 </div><p>接下来，详细介绍下<code>.mplstyle</code>文件中各种设置，比较着急的朋友也可以跳过下章内容，自行继续摸索😁</p>
 <p>展示一张用我的样式模板绘制出来的图片：
-<div id="id-5"><figure>
+<div id="id-6"><figure>
     <img src="/images/learning/python-studying/plotfigure/mystyle.png"/> <figcaption>
-            <h4>Fig.5. 展示样式</h4>
+            <h4>Fig.6. 展示样式</h4>
         </figcaption>
 </figure>
 </div></p>
@@ -2276,5 +2287,5 @@
             </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
                 <i class="fas fa-comment fa-fw"></i>
             </a>
-        </div><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><link rel="stylesheet" href="/css/c59bf3.min.css"><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/twemoji/twemoji.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js"></script><script type="text/javascript" src="/lib/katex/auto-render.min.js"></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js"></script><script type="text/javascript" src="/lib/katex/mhchem.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"},"twemoji":true};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+        </div><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><link rel="stylesheet" href="/css/9570ef.min.css"><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/twemoji/twemoji.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js"></script><script type="text/javascript" src="/lib/katex/auto-render.min.js"></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js"></script><script type="text/javascript" src="/lib/katex/mhchem.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"},"twemoji":true};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
 </html>
