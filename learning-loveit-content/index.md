@@ -364,8 +364,6 @@ $$ \ce{Hg^2+ ->[I-] HgI2 ->[I-] [Hg^{II}I4]^2-} $$
 
 呈现的输出效果如下:
 
-**{?:}joy{?:}** 而不是 **:joy:**
-
 {{< admonition tip >}}
 这个方法可以间接解决一个还未解决的 **[Hugo 的 issue](https://github.com/gohugoio/hugo/issues/4978)**.
 {{< /admonition >}}
