@@ -3,16 +3,7 @@
         <title>所有文章 - Startisan</title>
         <link>http://example.org/posts/</link>
         <description>所有文章 | Startisan</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Thu, 28 Jan 2021 00:00:00 &#43;0800</lastBuildDate><atom:link href="http://example.org/posts/" rel="self" type="application/rss+xml" /><item>
-    <title>(转)主题文档-基本概念</title>
-    <link>http://example.org/learning-loveit-basic/</link>
-    <pubDate>Thu, 28 Jan 2021 00:00:00 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>http://example.org/learning-loveit-basic/</guid>
-    <description><![CDATA[<div class="featured-image">
-                <img src="/images/learning/hugo-loveit/basic/coverpage.jpg" referrerpolicy="no-referrer">
-            </div><p>探索 Hugo - <strong>LoveIt</strong> 主题的全部内容和背后的核心概念.</p>]]></description>
-</item><item>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Thu, 21 Jan 2021 00:00:00 &#43;0800</lastBuildDate><atom:link href="http://example.org/posts/" rel="self" type="application/rss+xml" /><item>
     <title>Python-Matplotlib-绘图篇</title>
     <link>http://example.org/learning-python-matplotlib/</link>
     <pubDate>Thu, 21 Jan 2021 00:00:00 &#43;0800</pubDate>
@@ -93,5 +84,14 @@
     <description><![CDATA[<div class="featured-image">
                 <img src="/images/Science/sieve/coverpage.png" referrerpolicy="no-referrer">
             </div>土体的颗粒大小和颗粒级配在土木工程中，特别是在岩土工程中，扮演着重要的地位。]]></description>
+</item><item>
+    <title>LaTeX安装简介</title>
+    <link>http://example.org/science-latex/</link>
+    <pubDate>Sun, 15 Dec 2019 00:00:00 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/science-latex/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/images/Science/Latex/coverpage.png" referrerpolicy="no-referrer">
+            </div>LaTeX安装简介]]></description>
 </item></channel>
 </rss>
