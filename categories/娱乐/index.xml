@@ -1,0 +1,34 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>娱乐 - 分类 - Startisan</title>
+        <link>http://example.org/categories/%E5%A8%B1%E4%B9%90/</link>
+        <description>娱乐 - 分类 - Startisan</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 01 Nov 2020 12:00:00 &#43;0800</lastBuildDate><atom:link href="http://example.org/categories/%E5%A8%B1%E4%B9%90/" rel="self" type="application/rss+xml" /><item>
+    <title>清新地</title>
+    <link>http://example.org/amusement-qingxindi/</link>
+    <pubDate>Sun, 01 Nov 2020 12:00:00 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/amusement-qingxindi/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/images/Amusement/qingxindi/coverpage.png" referrerpolicy="no-referrer">
+            </div>科技大学附近的好去处~]]></description>
+</item><item>
+    <title>圆梦之旅_上海 ChinaJoy</title>
+    <link>http://example.org/amusement-2020chinajoy/</link>
+    <pubDate>Sun, 02 Aug 2020 12:00:00 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/amusement-2020chinajoy/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/images/Amusement/2020chinajoy/2020chinajoy_coverpage.jpg" referrerpolicy="no-referrer">
+            </div>分享几张拍的不好看的照片~]]></description>
+</item><item>
+    <title>LiveHouse 初体验</title>
+    <link>http://example.org/amusement-livehouse/</link>
+    <pubDate>Sat, 28 Dec 2019 23:00:00 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/amusement-livehouse/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/images/Amusement/livehouse/Livehouse1.png" referrerpolicy="no-referrer">
+            </div>第一次去 LiveHouse 听现场演奏的音乐~]]></description>
+</item></channel>
+</rss>

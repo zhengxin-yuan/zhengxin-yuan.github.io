@@ -1,0 +1,16 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>ChinaJoy - 标签 - Startisan</title>
+        <link>http://example.org/tags/chinajoy/</link>
+        <description>ChinaJoy - 标签 - Startisan</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 02 Aug 2020 12:00:00 &#43;0800</lastBuildDate><atom:link href="http://example.org/tags/chinajoy/" rel="self" type="application/rss+xml" /><item>
+    <title>圆梦之旅_上海 ChinaJoy</title>
+    <link>http://example.org/amusement-2020chinajoy/</link>
+    <pubDate>Sun, 02 Aug 2020 12:00:00 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/amusement-2020chinajoy/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/images/Amusement/2020chinajoy/2020chinajoy_coverpage.jpg" referrerpolicy="no-referrer">
+            </div>分享几张拍的不好看的照片~]]></description>
+</item></channel>
+</rss>

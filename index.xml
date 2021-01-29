@@ -1,0 +1,99 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Startisan</title>
+        <link>http://example.org/</link>
+        <description>六十四比特的星尘</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Thu, 28 Jan 2021 00:00:00 &#43;0800</lastBuildDate>
+            <atom:link href="http://example.org/index.xml" rel="self" type="application/rss+xml" />
+        <item>
+    <title>(转)主题文档-内容</title>
+    <link>http://example.org/learning-loveit-content/</link>
+    <pubDate>Thu, 28 Jan 2021 00:00:00 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/learning-loveit-content/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/images/learning/hugo-loveit/content/coverpage.jpg" referrerpolicy="no-referrer">
+            </div><p>了解如何在 <strong>LoveIt</strong> 主题中快速, 直观地创建和组织内容.</p>]]></description>
+</item><item>
+    <title>(转)主题文档-基本概念</title>
+    <link>http://example.org/learning-loveit-basic/</link>
+    <pubDate>Thu, 28 Jan 2021 00:00:00 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/learning-loveit-basic/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/images/learning/hugo-loveit/basic/coverpage.jpg" referrerpolicy="no-referrer">
+            </div><p>探索 Hugo - <strong>LoveIt</strong> 主题的全部内容和背后的核心概念.</p>]]></description>
+</item><item>
+    <title>Python-Matplotlib-绘图篇</title>
+    <link>http://example.org/learning-python-matplotlib/</link>
+    <pubDate>Thu, 21 Jan 2021 00:00:00 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/learning-python-matplotlib/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/images/learning/python-studying/plotfigure/coverpage-plot.png" referrerpolicy="no-referrer">
+            </div>利用Python绘制出好看的科研数据图，将自己的绘图风格存储为模板，方便以后调用。同时，Python是一款开源软件，我们再也不用担心版权的问题了!]]></description>
+</item><item>
+    <title>Python-Basic-基础篇</title>
+    <link>http://example.org/learning-python-basic/</link>
+    <pubDate>Fri, 25 Dec 2020 00:00:00 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/learning-python-basic/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/images/learning/python-studying/basic/coverpage-basic.png" referrerpolicy="no-referrer">
+            </div>Python自用查询手册，笔记备忘之用。]]></description>
+</item><item>
+    <title>英语学习-词汇积累</title>
+    <link>http://example.org/learning-english-vocabulary/</link>
+    <pubDate>Tue, 01 Dec 2020 00:00:00 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/learning-english-vocabulary/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/images/learning/english-studying/words/coverpage.png" referrerpolicy="no-referrer">
+            </div>英语学习笔记，写下自己不熟悉的英文词汇。]]></description>
+</item><item>
+    <title>清新地</title>
+    <link>http://example.org/amusement-qingxindi/</link>
+    <pubDate>Sun, 01 Nov 2020 12:00:00 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/amusement-qingxindi/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/images/Amusement/qingxindi/coverpage.png" referrerpolicy="no-referrer">
+            </div>科技大学附近的好去处~]]></description>
+</item><item>
+    <title>圆梦之旅_上海 ChinaJoy</title>
+    <link>http://example.org/amusement-2020chinajoy/</link>
+    <pubDate>Sun, 02 Aug 2020 12:00:00 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/amusement-2020chinajoy/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/images/Amusement/2020chinajoy/2020chinajoy_coverpage.jpg" referrerpolicy="no-referrer">
+            </div>分享几张拍的不好看的照片~]]></description>
+</item><item>
+    <title>EndNote中英文参考文献混排</title>
+    <link>http://example.org/science-endnote/</link>
+    <pubDate>Fri, 20 Mar 2020 00:00:00 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/science-endnote/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/images/Science/EndNote/coverpage.png" referrerpolicy="no-referrer">
+            </div>通过文献管理软件EndNoteX9，实现中英文参考文献混排效果，帮助你轻松完成学位论文，毕业撒花！]]></description>
+</item><item>
+    <title>AJE论文润色简介</title>
+    <link>http://example.org/science-aje/</link>
+    <pubDate>Wed, 01 Jan 2020 00:00:00 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/science-aje/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/images/Science/AJE/coverpage.png" referrerpolicy="no-referrer">
+            </div>AJE论文润色简介]]></description>
+</item><item>
+    <title>LiveHouse 初体验</title>
+    <link>http://example.org/amusement-livehouse/</link>
+    <pubDate>Sat, 28 Dec 2019 23:00:00 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/amusement-livehouse/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/images/Amusement/livehouse/Livehouse1.png" referrerpolicy="no-referrer">
+            </div>第一次去 LiveHouse 听现场演奏的音乐~]]></description>
+</item></channel>
+</rss>

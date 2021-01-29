@@ -1,0 +1,16 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>LaTeX - 标签 - Startisan</title>
+        <link>http://example.org/tags/latex/</link>
+        <description>LaTeX - 标签 - Startisan</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 15 Dec 2019 00:00:00 &#43;0800</lastBuildDate><atom:link href="http://example.org/tags/latex/" rel="self" type="application/rss+xml" /><item>
+    <title>LaTeX安装简介</title>
+    <link>http://example.org/science-latex/</link>
+    <pubDate>Sun, 15 Dec 2019 00:00:00 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/science-latex/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/images/Science/Latex/coverpage.png" referrerpolicy="no-referrer">
+            </div>LaTeX安装简介]]></description>
+</item></channel>
+</rss>

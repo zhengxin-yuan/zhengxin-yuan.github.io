@@ -1,0 +1,16 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>论文润色 - 标签 - Startisan</title>
+        <link>http://example.org/tags/%E8%AE%BA%E6%96%87%E6%B6%A6%E8%89%B2/</link>
+        <description>论文润色 - 标签 - Startisan</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Wed, 01 Jan 2020 00:00:00 &#43;0800</lastBuildDate><atom:link href="http://example.org/tags/%E8%AE%BA%E6%96%87%E6%B6%A6%E8%89%B2/" rel="self" type="application/rss+xml" /><item>
+    <title>AJE论文润色简介</title>
+    <link>http://example.org/science-aje/</link>
+    <pubDate>Wed, 01 Jan 2020 00:00:00 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/science-aje/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/images/Science/AJE/coverpage.png" referrerpolicy="no-referrer">
+            </div>AJE论文润色简介]]></description>
+</item></channel>
+</rss>

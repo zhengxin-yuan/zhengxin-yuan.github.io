@@ -1,0 +1,16 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>耿梁 - 标签 - Startisan</title>
+        <link>http://example.org/tags/%E8%80%BF%E6%A2%81/</link>
+        <description>耿梁 - 标签 - Startisan</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sat, 28 Dec 2019 23:00:00 &#43;0800</lastBuildDate><atom:link href="http://example.org/tags/%E8%80%BF%E6%A2%81/" rel="self" type="application/rss+xml" /><item>
+    <title>LiveHouse 初体验</title>
+    <link>http://example.org/amusement-livehouse/</link>
+    <pubDate>Sat, 28 Dec 2019 23:00:00 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/amusement-livehouse/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/images/Amusement/livehouse/Livehouse1.png" referrerpolicy="no-referrer">
+            </div>第一次去 LiveHouse 听现场演奏的音乐~]]></description>
+</item></channel>
+</rss>

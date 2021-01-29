@@ -1,0 +1,16 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>影响因子 - 标签 - Startisan</title>
+        <link>http://example.org/tags/%E5%BD%B1%E5%93%8D%E5%9B%A0%E5%AD%90/</link>
+        <description>影响因子 - 标签 - Startisan</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Mon, 11 Nov 2019 00:00:00 &#43;0800</lastBuildDate><atom:link href="http://example.org/tags/%E5%BD%B1%E5%93%8D%E5%9B%A0%E5%AD%90/" rel="self" type="application/rss+xml" /><item>
+    <title>岩土工程SCI期刊</title>
+    <link>http://example.org/science-geojournals/</link>
+    <pubDate>Mon, 11 Nov 2019 00:00:00 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/science-geojournals/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/images/Science/Journal/coverpage.png" referrerpolicy="no-referrer">
+            </div>岩土工程中著名的SCI期刊，分别属于ASCE，ICE，Elsevier，Springer，CSP，APS，AGU，和ASTM出版商。]]></description>
+</item></channel>
+</rss>

@@ -1,0 +1,61 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>科研 - 分类 - Startisan</title>
+        <link>http://example.org/categories/%E7%A7%91%E7%A0%94/</link>
+        <description>科研 - 分类 - Startisan</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Fri, 20 Mar 2020 00:00:00 &#43;0800</lastBuildDate><atom:link href="http://example.org/categories/%E7%A7%91%E7%A0%94/" rel="self" type="application/rss+xml" /><item>
+    <title>EndNote中英文参考文献混排</title>
+    <link>http://example.org/science-endnote/</link>
+    <pubDate>Fri, 20 Mar 2020 00:00:00 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/science-endnote/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/images/Science/EndNote/coverpage.png" referrerpolicy="no-referrer">
+            </div>通过文献管理软件EndNoteX9，实现中英文参考文献混排效果，帮助你轻松完成学位论文，毕业撒花！]]></description>
+</item><item>
+    <title>AJE论文润色简介</title>
+    <link>http://example.org/science-aje/</link>
+    <pubDate>Wed, 01 Jan 2020 00:00:00 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/science-aje/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/images/Science/AJE/coverpage.png" referrerpolicy="no-referrer">
+            </div>AJE论文润色简介]]></description>
+</item><item>
+    <title>土工筛分法相关参考规范</title>
+    <link>http://example.org/science-sieve/</link>
+    <pubDate>Fri, 20 Dec 2019 00:00:00 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/science-sieve/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/images/Science/sieve/coverpage.png" referrerpolicy="no-referrer">
+            </div>土体的颗粒大小和颗粒级配在土木工程中，特别是在岩土工程中，扮演着重要的地位。]]></description>
+</item><item>
+    <title>LaTeX安装简介</title>
+    <link>http://example.org/science-latex/</link>
+    <pubDate>Sun, 15 Dec 2019 00:00:00 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/science-latex/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/images/Science/Latex/coverpage.png" referrerpolicy="no-referrer">
+            </div>LaTeX安装简介]]></description>
+</item><item>
+    <title>扫描电镜SEM简介</title>
+    <link>http://example.org/science-sem/</link>
+    <pubDate>Sun, 01 Dec 2019 00:00:00 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/science-sem/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/images/Science/SEM/coverpage.png" referrerpolicy="no-referrer">
+            </div>简单介绍一些扫描电镜及其实验的基本知识，部分内容来源于作者自身的实验经验，并非统一规定或实验标准，全文仅作学习交流使用。]]></description>
+</item><item>
+    <title>岩土工程SCI期刊</title>
+    <link>http://example.org/science-geojournals/</link>
+    <pubDate>Mon, 11 Nov 2019 00:00:00 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/science-geojournals/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/images/Science/Journal/coverpage.png" referrerpolicy="no-referrer">
+            </div>岩土工程中著名的SCI期刊，分别属于ASCE，ICE，Elsevier，Springer，CSP，APS，AGU，和ASTM出版商。]]></description>
+</item></channel>
+</rss>
