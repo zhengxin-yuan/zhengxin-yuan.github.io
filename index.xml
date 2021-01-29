@@ -6,15 +6,6 @@
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Thu, 28 Jan 2021 00:00:00 &#43;0800</lastBuildDate>
             <atom:link href="http://example.org/index.xml" rel="self" type="application/rss+xml" />
         <item>
-    <title>(转)主题文档-内容</title>
-    <link>http://example.org/learning-loveit-content/</link>
-    <pubDate>Thu, 28 Jan 2021 00:00:00 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>http://example.org/learning-loveit-content/</guid>
-    <description><![CDATA[<div class="featured-image">
-                <img src="/images/learning/hugo-loveit/content/coverpage.jpg" referrerpolicy="no-referrer">
-            </div><p>了解如何在 <strong>LoveIt</strong> 主题中快速, 直观地创建和组织内容.</p>]]></description>
-</item><item>
     <title>(转)主题文档-基本概念</title>
     <link>http://example.org/learning-loveit-basic/</link>
     <pubDate>Thu, 28 Jan 2021 00:00:00 &#43;0800</pubDate>
@@ -95,5 +86,14 @@
     <description><![CDATA[<div class="featured-image">
                 <img src="/images/Amusement/livehouse/Livehouse1.png" referrerpolicy="no-referrer">
             </div>第一次去 LiveHouse 听现场演奏的音乐~]]></description>
+</item><item>
+    <title>土工筛分法相关参考规范</title>
+    <link>http://example.org/science-sieve/</link>
+    <pubDate>Fri, 20 Dec 2019 00:00:00 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/science-sieve/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/images/Science/sieve/coverpage.png" referrerpolicy="no-referrer">
+            </div>土体的颗粒大小和颗粒级配在土木工程中，特别是在岩土工程中，扮演着重要的地位。]]></description>
 </item></channel>
 </rss>
