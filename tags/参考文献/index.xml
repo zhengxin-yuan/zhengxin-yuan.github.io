@@ -1,0 +1,15 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>参考文献 - 标签 - 万事屋</title>
+        <link>http://example.org/tags/%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE/</link>
+        <description>参考文献 - 标签 - 万事屋</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>yuanzhx@126.com (Yuan Z.X.)</managingEditor>
+            <webMaster>yuanzhx@126.com (Yuan Z.X.)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Fri, 20 Mar 2020 00:00:00 &#43;0800</lastBuildDate><atom:link href="http://example.org/tags/%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE/" rel="self" type="application/rss+xml" /><item>
+    <title>EndNote中英文参考文献混排</title>
+    <link>http://example.org/science-endnote/</link>
+    <pubDate>Fri, 20 Mar 2020 00:00:00 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/science-endnote/</guid>
+    <description><![CDATA[通过文献管理软件EndNoteX9，实现中英文参考文献混排效果，帮助你轻松完成学位论文，毕业撒花！]]></description>
+</item></channel>
+</rss>

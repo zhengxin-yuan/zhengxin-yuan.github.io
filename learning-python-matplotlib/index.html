@@ -1,0 +1,2292 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Python-Matplotlib - 万事屋</title><meta name="Description" content="利用Python绘制出好看的科研数据图，将自己的绘图风格存储为模板，方便以后调用。同时，Python是一款开源软件，我们再也不用担心版权的问题了!"><meta property="og:title" content="Python-Matplotlib" />
+<meta property="og:description" content="利用Python绘制出好看的科研数据图，将自己的绘图风格存储为模板，方便以后调用。同时，Python是一款开源软件，我们再也不用担心版权的问题了!" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://example.org/learning-python-matplotlib/" />
+<meta property="og:image" content="http://example.org/logo.png"/>
+<meta property="article:published_time" content="2021-01-21T00:00:00+08:00" />
+<meta property="article:modified_time" content="2021-01-28T00:00:00+08:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="http://example.org/logo.png"/>
+
+<meta name="twitter:title" content="Python-Matplotlib"/>
+<meta name="twitter:description" content="利用Python绘制出好看的科研数据图，将自己的绘图风格存储为模板，方便以后调用。同时，Python是一款开源软件，我们再也不用担心版权的问题了!"/>
+<meta name="application-name" content="万事屋">
+<meta name="apple-mobile-web-app-title" content="万事屋"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/images/webicon.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://example.org/learning-python-matplotlib/" /><link rel="prev" href="http://example.org/learning-python-basic/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Python-Matplotlib",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/example.org\/learning-python-matplotlib\/"
+        },"genre": "posts","keywords": "Python, 学习笔记, 科研绘图","wordcount":  7644 ,
+        "url": "http:\/\/example.org\/learning-python-matplotlib\/","datePublished": "2021-01-21T00:00:00+08:00","dateModified": "2021-01-28T00:00:00+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "yuanzhx","logo": "http:\/\/example.org\/images\/avatar.png"},"author": {
+                "@type": "Person",
+                "name": "Y. Z. X."
+            },"description": "利用Python绘制出好看的科研数据图，将自己的绘图风格存储为模板，方便以后调用。同时，Python是一款开源软件，我们再也不用担心版权的问题了!"
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('dark' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'dark' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="万事屋"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw'></i></span>万事屋</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/journals/"> 期刊 </a><a class="menu-item" href="/resources/"> 资源 </a><a class="menu-item" href="/about/"> 关于 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="万事屋"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw'></i></span>万事屋</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/journals/" title="">期刊</a><a class="menu-item" href="/resources/" title="">资源</a><a class="menu-item" href="/about/" title="">关于</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content always-active" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">Python-Matplotlib</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Y. Z. X.</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/learning/"><i class="far fa-folder fa-fw"></i>learning</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-01-21">2021-01-21</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 7644 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 16 分钟&nbsp;</div>
+        </div><div class="featured-image"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/images/learning/python-studying/plotfigure/coverpage-plot.png"
+        data-srcset="/images/learning/python-studying/plotfigure/coverpage-plot.png, /images/learning/python-studying/plotfigure/coverpage-plot.png 1.5x, /images/learning/python-studying/plotfigure/coverpage-plot.png 2x"
+        data-sizes="auto"
+        alt="/images/learning/python-studying/plotfigure/coverpage-plot.png"
+        title="利用Python绘制出好看的科研数据图，将自己的绘图风格存储为模板，方便以后调用。同时，Python是一款开源软件，我们再也不用担心版权的问题了!" /></div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-matplotlib">1. Matplotlib</a>
+      <ul>
+        <li><a href="#11-安装">1.1. 安装</a></li>
+      </ul>
+    </li>
+    <li><a href="#2-快速绘图">2. 快速绘图</a>
+      <ul>
+        <li><a href="#21-绘图包的引入">2.1. 绘图包的引入</a></li>
+        <li><a href="#22-默认格式">2.2. 默认格式</a></li>
+        <li><a href="#23-图片构造">2.3. 图片构造</a></li>
+        <li><a href="#24-期刊版面构造">2.4. 期刊版面构造</a></li>
+        <li><a href="#24-自建样式">2.4. 自建样式</a>
+          <ul>
+            <li><a href="#241-自建样式的使用">2.4.1. 自建样式的使用</a></li>
+            <li><a href="#242-自建样式的撰写">2.4.2. 自建样式的撰写</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#3-样式的设置">3. 样式的设置</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><div class="details admonition note open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-pencil-alt fa-fw"></i>本文目标<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">利用Python绘制出好看的科研数据图，将自己的绘图风格存储为模板，方便以后调用。同时，Python是一款开源软件，我们再也不用担心版权的问题了❤️</div>
+        </div>
+    </div>
+<h2 id="1-matplotlib">1. Matplotlib</h2>
+<p><font color="blue"><strong>Matplotlib</strong></font>
+是本文的主角，它是一款Python的开源绘图包，将其引入Python后，使用相关代码即可绘制数据图。
+主页地址：<a href="https://matplotlib.org/3.1.1/index.html" target="_blank" rel="noopener noreffer">Matplotlib</a></p>
+<h3 id="11-安装">1.1. 安装</h3>
+<p>Windows10 系统的用户，安装Matplotlib<strong>非常简单~</strong></p>
+<p>通过键盘上的 <font color="blue"><strong>“Win”+“R”键</strong></font> 快速调出“运行”，在左下角。
+然后，输入<font color="blue"><strong>cmd</strong></font>，敲击回车Enter，会打开一个黑色的框框，在里面输入一行代码。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">pip install matplotlib
+</code></pre></td></tr></table>
+</div>
+</div><p>等待进度条走完，你的Matplotlib包就安装好了~</p>
+<hr>
+<h2 id="2-快速绘图">2. 快速绘图</h2>
+<p><font color="red"><strong>注意：</strong></font>本节内容参考下面这段视频，英语好的朋友可以自行前往观看~
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube-nocookie.com/embed/UO98lJQ3QGI" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+</p>
+<h3 id="21-绘图包的引入">2.1. 绘图包的引入</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-Python" data-lang="Python"><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>plt是缩写，省的每次写全名。</p>
+<h3 id="22-默认格式">2.2. 默认格式</h3>
+<p>输入下段代码，你可以得到这样一张图片：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-Python" data-lang="Python"><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+
+<span class="n">ages_x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">25</span><span class="p">,</span> <span class="mi">26</span><span class="p">,</span> <span class="mi">27</span><span class="p">,</span> <span class="mi">28</span><span class="p">,</span> <span class="mi">29</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">33</span><span class="p">,</span> <span class="mi">34</span><span class="p">,</span> <span class="mi">35</span><span class="p">]</span>
+
+<span class="n">dev_y</span> <span class="o">=</span> <span class="p">[</span><span class="mi">38496</span><span class="p">,</span> <span class="mi">42000</span><span class="p">,</span> <span class="mi">46752</span><span class="p">,</span> <span class="mi">49320</span><span class="p">,</span> <span class="mi">53200</span><span class="p">,</span>
+         <span class="mi">56000</span><span class="p">,</span> <span class="mi">62316</span><span class="p">,</span> <span class="mi">64928</span><span class="p">,</span> <span class="mi">67317</span><span class="p">,</span> <span class="mi">68748</span><span class="p">,</span> <span class="mi">73752</span><span class="p">]</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ages_x</span><span class="p">,</span> <span class="n">dev_y</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;All Devs&#39;</span><span class="p">)</span>
+
+<span class="n">py_dev_y</span> <span class="o">=</span> <span class="p">[</span><span class="mi">45372</span><span class="p">,</span> <span class="mi">48876</span><span class="p">,</span> <span class="mi">53850</span><span class="p">,</span> <span class="mi">57287</span><span class="p">,</span> <span class="mi">63016</span><span class="p">,</span>
+            <span class="mi">65998</span><span class="p">,</span> <span class="mi">70003</span><span class="p">,</span> <span class="mi">70000</span><span class="p">,</span> <span class="mi">71496</span><span class="p">,</span> <span class="mi">75370</span><span class="p">,</span> <span class="mi">83640</span><span class="p">]</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ages_x</span><span class="p">,</span> <span class="n">py_dev_y</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Python&#39;</span><span class="p">)</span>
+
+<span class="n">js_dev_y</span> <span class="o">=</span> <span class="p">[</span><span class="mi">37810</span><span class="p">,</span> <span class="mi">43515</span><span class="p">,</span> <span class="mi">46823</span><span class="p">,</span> <span class="mi">49293</span><span class="p">,</span> <span class="mi">53437</span><span class="p">,</span>
+            <span class="mi">56373</span><span class="p">,</span> <span class="mi">62375</span><span class="p">,</span> <span class="mi">66674</span><span class="p">,</span> <span class="mi">68745</span><span class="p">,</span> <span class="mi">68746</span><span class="p">,</span> <span class="mi">74583</span><span class="p">]</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ages_x</span><span class="p">,</span> <span class="n">js_dev_y</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;JavaScript&#39;</span><span class="p">)</span>
+
+
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Meidan Salary (USD) by Age&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Ages&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Median Salary (USD)&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="bp">True</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;plot.png&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></td></tr></table>
+</div>
+</div><figure><a class="lightgallery" href="/images/learning/python-studying/plotfigure/plot.png" title="/images/learning/python-studying/plotfigure/plot.png" data-thumbnail="/images/learning/python-studying/plotfigure/plot.png" data-sub-html="<h2>Fig.1. 默认格式</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/images/learning/python-studying/plotfigure/plot.png"
+            data-srcset="/images/learning/python-studying/plotfigure/plot.png, /images/learning/python-studying/plotfigure/plot.png 1.5x, /images/learning/python-studying/plotfigure/plot.png 2x"
+            data-sizes="auto"
+            alt="/images/learning/python-studying/plotfigure/plot.png" width="85%" />
+    </a><figcaption class="image-caption">Fig.1. 默认格式</figcaption>
+    </figure>
+<p>看上去还不错！简单介绍下各行代码的含义！</p>
+<ul>
+<li><code>ages_x</code>,<code>dev_y</code>,<code>py_dev_y</code>,<code>js_dev_y</code>确定变量</li>
+<li><code>plt.plot(x, y, label)</code>画线，需要x和y，还要给个标签<code>label</code>后面做图例</li>
+<li><code>plt.title()</code>图标题</li>
+<li><code>plt.xlabel()</code>,<code>plt.ylabel()</code>x轴和y轴的标签</li>
+<li><code>plt.legend()</code>绘制图例</li>
+<li><code>plt.grid(True)</code>开启内部栅格线</li>
+<li><code>plt.tight_layout()</code>紧凑布局，减小padding</li>
+<li><code>plt.savefig('plot.png')</code>保存图片，同文件夹下</li>
+<li><code>plt.show()</code>给你看看图长啥样~</li>
+</ul>
+<hr>
+<p><font color="blue"><strong>下面对代码进行小小的改动，看看发生了什么？！</strong></font></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-Python" data-lang="Python"><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+
+<span class="n">ages_x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">25</span><span class="p">,</span> <span class="mi">26</span><span class="p">,</span> <span class="mi">27</span><span class="p">,</span> <span class="mi">28</span><span class="p">,</span> <span class="mi">29</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">33</span><span class="p">,</span> <span class="mi">34</span><span class="p">,</span> <span class="mi">35</span><span class="p">]</span>
+
+<span class="n">dev_y</span> <span class="o">=</span> <span class="p">[</span><span class="mi">38496</span><span class="p">,</span> <span class="mi">42000</span><span class="p">,</span> <span class="mi">46752</span><span class="p">,</span> <span class="mi">49320</span><span class="p">,</span> <span class="mi">53200</span><span class="p">,</span>
+         <span class="mi">56000</span><span class="p">,</span> <span class="mi">62316</span><span class="p">,</span> <span class="mi">64928</span><span class="p">,</span> <span class="mi">67317</span><span class="p">,</span> <span class="mi">68748</span><span class="p">,</span> <span class="mi">73752</span><span class="p">]</span>
+
+<span class="n">py_dev_y</span> <span class="o">=</span> <span class="p">[</span><span class="mi">45372</span><span class="p">,</span> <span class="mi">48876</span><span class="p">,</span> <span class="mi">53850</span><span class="p">,</span> <span class="mi">57287</span><span class="p">,</span> <span class="mi">63016</span><span class="p">,</span>
+            <span class="mi">65998</span><span class="p">,</span> <span class="mi">70003</span><span class="p">,</span> <span class="mi">70000</span><span class="p">,</span> <span class="mi">71496</span><span class="p">,</span> <span class="mi">75370</span><span class="p">,</span> <span class="mi">83640</span><span class="p">]</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ages_x</span><span class="p">,</span> <span class="n">py_dev_y</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;-.&#39;</span><span class="p">,</span>
+	<span class="n">linewidth</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Python&#39;</span><span class="p">)</span>
+
+<span class="n">js_dev_y</span> <span class="o">=</span> <span class="p">[</span><span class="mi">37810</span><span class="p">,</span> <span class="mi">43515</span><span class="p">,</span> <span class="mi">46823</span><span class="p">,</span> <span class="mi">49293</span><span class="p">,</span> <span class="mi">53437</span><span class="p">,</span>
+            <span class="mi">56373</span><span class="p">,</span> <span class="mi">62375</span><span class="p">,</span> <span class="mi">66674</span><span class="p">,</span> <span class="mi">68745</span><span class="p">,</span> <span class="mi">68746</span><span class="p">,</span> <span class="mi">74583</span><span class="p">]</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ages_x</span><span class="p">,</span> <span class="n">js_dev_y</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#FFC0CB&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;JavaScript&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ages_x</span><span class="p">,</span> <span class="n">dev_y</span><span class="p">,</span> <span class="s1">&#39;p--r&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;All Devs&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Meidan Salary (USD) by Age&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Ages&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Median Salary (USD)&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+
+<span class="c1"># plt.grid(True)</span>
+
+<span class="c1"># plt.tight_layout()</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;plot1.png&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></td></tr></table>
+</div>
+</div><figure><a class="lightgallery" href="/images/learning/python-studying/plotfigure/plot1.png" title="/images/learning/python-studying/plotfigure/plot1.png" data-thumbnail="/images/learning/python-studying/plotfigure/plot1.png" data-sub-html="<h2>Fig.2. 改动格式</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/images/learning/python-studying/plotfigure/plot1.png"
+            data-srcset="/images/learning/python-studying/plotfigure/plot1.png, /images/learning/python-studying/plotfigure/plot1.png 1.5x, /images/learning/python-studying/plotfigure/plot1.png 2x"
+            data-sizes="auto"
+            alt="/images/learning/python-studying/plotfigure/plot1.png" width="85%" />
+    </a><figcaption class="image-caption">Fig.2. 改动格式</figcaption>
+    </figure>
+<p>简单介绍下改动了什么</p>
+<ul>
+<li>图例顺序发生了变化，这是因为<code>plt.plot()</code>顺序发生了变化</li>
+<li>注释掉了<code>plt.grid(True)</code>和<code>plt.tight_layout()</code>，相应的也没了</li>
+<li>线形可以写成<code>fmt = '[marker][line][color]'</code>的形式，例如<code>'p--r'</code>。但是，我不是很推荐，因为过久了可能忘记这是真的！<a href="https://matplotlib.org/3.3.3/api/_as_gen/matplotlib.pyplot.plot.html" target="_blank" rel="noopener noreffer">查阅地址</a></li>
+<li>通过<code>color</code>,<code>linestyle</code>,<code>linewidth</code>,<code>marker</code>也可以改线形，其中<code>color</code>还能用<code>#515151</code>这种格式</li>
+</ul>
+<hr>
+<p>此外，Matplotlib有些很有趣的内置样式，通过<code>print(plt.style.available)</code>可以查看。</p>
+<p>通过<code>plt.style.use('fivethirtyeight')</code>进行调用。</p>
+<p>特殊的例子，加入<code>plt.xkcd()</code>,得到如图所示：</p>
+<figure><a class="lightgallery" href="/images/learning/python-studying/plotfigure/plot2.png" title="/images/learning/python-studying/plotfigure/plot2.png" data-thumbnail="/images/learning/python-studying/plotfigure/plot2.png" data-sub-html="<h2>Fig.3. 有趣的格式</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/images/learning/python-studying/plotfigure/plot2.png"
+            data-srcset="/images/learning/python-studying/plotfigure/plot2.png, /images/learning/python-studying/plotfigure/plot2.png 1.5x, /images/learning/python-studying/plotfigure/plot2.png 2x"
+            data-sizes="auto"
+            alt="/images/learning/python-studying/plotfigure/plot2.png" width="85%" />
+    </a><figcaption class="image-caption">Fig.3. 有趣的格式</figcaption>
+    </figure>
+<hr>
+<h3 id="23-图片构造">2.3. 图片构造</h3>
+<p>看完上述的介绍，相信此时的你也跃跃欲试，想创造出属于自己的专属“皮肤”！😋</p>
+<p><font color="blue"><strong>PS:</strong></font> 不玩游戏的朋友，这里的皮肤指的是样式。</p>
+<p>恭喜大家😎，文章的后面将会介绍如何创建自己的样式。但是，在此之前，先带领大家解构一下一张科研图片，帮助大家更好地学习后面的知识，请看下图：</p>
+<figure><a class="lightgallery" href="/images/learning/python-studying/plotfigure/Anatomy_of_a_figure.png" title="/images/learning/python-studying/plotfigure/Anatomy_of_a_figure.png" data-thumbnail="/images/learning/python-studying/plotfigure/Anatomy_of_a_figure.png" data-sub-html="<h2>Fig.4. 科研图片的构造</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/images/learning/python-studying/plotfigure/Anatomy_of_a_figure.png"
+            data-srcset="/images/learning/python-studying/plotfigure/Anatomy_of_a_figure.png, /images/learning/python-studying/plotfigure/Anatomy_of_a_figure.png 1.5x, /images/learning/python-studying/plotfigure/Anatomy_of_a_figure.png 2x"
+            data-sizes="auto"
+            alt="/images/learning/python-studying/plotfigure/Anatomy_of_a_figure.png" width="100%" />
+    </a><figcaption class="image-caption">Fig.4. 科研图片的构造</figcaption>
+    </figure>
+<p>毫无疑问，上面这张图片也是通过Python的Matplotlib包实现的，源码如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">  1
+</span><span class="lnt">  2
+</span><span class="lnt">  3
+</span><span class="lnt">  4
+</span><span class="lnt">  5
+</span><span class="lnt">  6
+</span><span class="lnt">  7
+</span><span class="lnt">  8
+</span><span class="lnt">  9
+</span><span class="lnt"> 10
+</span><span class="lnt"> 11
+</span><span class="lnt"> 12
+</span><span class="lnt"> 13
+</span><span class="lnt"> 14
+</span><span class="lnt"> 15
+</span><span class="lnt"> 16
+</span><span class="lnt"> 17
+</span><span class="lnt"> 18
+</span><span class="lnt"> 19
+</span><span class="lnt"> 20
+</span><span class="lnt"> 21
+</span><span class="lnt"> 22
+</span><span class="lnt"> 23
+</span><span class="lnt"> 24
+</span><span class="lnt"> 25
+</span><span class="lnt"> 26
+</span><span class="lnt"> 27
+</span><span class="lnt"> 28
+</span><span class="lnt"> 29
+</span><span class="lnt"> 30
+</span><span class="lnt"> 31
+</span><span class="lnt"> 32
+</span><span class="lnt"> 33
+</span><span class="lnt"> 34
+</span><span class="lnt"> 35
+</span><span class="lnt"> 36
+</span><span class="lnt"> 37
+</span><span class="lnt"> 38
+</span><span class="lnt"> 39
+</span><span class="lnt"> 40
+</span><span class="lnt"> 41
+</span><span class="lnt"> 42
+</span><span class="lnt"> 43
+</span><span class="lnt"> 44
+</span><span class="lnt"> 45
+</span><span class="lnt"> 46
+</span><span class="lnt"> 47
+</span><span class="lnt"> 48
+</span><span class="lnt"> 49
+</span><span class="lnt"> 50
+</span><span class="lnt"> 51
+</span><span class="lnt"> 52
+</span><span class="lnt"> 53
+</span><span class="lnt"> 54
+</span><span class="lnt"> 55
+</span><span class="lnt"> 56
+</span><span class="lnt"> 57
+</span><span class="lnt"> 58
+</span><span class="lnt"> 59
+</span><span class="lnt"> 60
+</span><span class="lnt"> 61
+</span><span class="lnt"> 62
+</span><span class="lnt"> 63
+</span><span class="lnt"> 64
+</span><span class="lnt"> 65
+</span><span class="lnt"> 66
+</span><span class="lnt"> 67
+</span><span class="lnt"> 68
+</span><span class="lnt"> 69
+</span><span class="lnt"> 70
+</span><span class="lnt"> 71
+</span><span class="lnt"> 72
+</span><span class="lnt"> 73
+</span><span class="lnt"> 74
+</span><span class="lnt"> 75
+</span><span class="lnt"> 76
+</span><span class="lnt"> 77
+</span><span class="lnt"> 78
+</span><span class="lnt"> 79
+</span><span class="lnt"> 80
+</span><span class="lnt"> 81
+</span><span class="lnt"> 82
+</span><span class="lnt"> 83
+</span><span class="lnt"> 84
+</span><span class="lnt"> 85
+</span><span class="lnt"> 86
+</span><span class="lnt"> 87
+</span><span class="lnt"> 88
+</span><span class="lnt"> 89
+</span><span class="lnt"> 90
+</span><span class="lnt"> 91
+</span><span class="lnt"> 92
+</span><span class="lnt"> 93
+</span><span class="lnt"> 94
+</span><span class="lnt"> 95
+</span><span class="lnt"> 96
+</span><span class="lnt"> 97
+</span><span class="lnt"> 98
+</span><span class="lnt"> 99
+</span><span class="lnt">100
+</span><span class="lnt">101
+</span><span class="lnt">102
+</span><span class="lnt">103
+</span><span class="lnt">104
+</span><span class="lnt">105
+</span><span class="lnt">106
+</span><span class="lnt">107
+</span><span class="lnt">108
+</span><span class="lnt">109
+</span><span class="lnt">110
+</span><span class="lnt">111
+</span><span class="lnt">112
+</span><span class="lnt">113
+</span><span class="lnt">114
+</span><span class="lnt">115
+</span><span class="lnt">116
+</span><span class="lnt">117
+</span><span class="lnt">118
+</span><span class="lnt">119
+</span><span class="lnt">120
+</span><span class="lnt">121
+</span><span class="lnt">122
+</span><span class="lnt">123
+</span><span class="lnt">124
+</span><span class="lnt">125
+</span><span class="lnt">126
+</span><span class="lnt">127
+</span><span class="lnt">128
+</span><span class="lnt">129
+</span><span class="lnt">130
+</span><span class="lnt">131
+</span><span class="lnt">132
+</span><span class="lnt">133
+</span><span class="lnt">134
+</span><span class="lnt">135
+</span><span class="lnt">136
+</span><span class="lnt">137
+</span><span class="lnt">138
+</span><span class="lnt">139
+</span><span class="lnt">140
+</span><span class="lnt">141
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-Python" data-lang="Python"><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">matplotlib.ticker</span> <span class="kn">import</span> <span class="n">AutoMinorLocator</span><span class="p">,</span> <span class="n">MultipleLocator</span>
+
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">19680801</span><span class="p">)</span>
+
+<span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">Y1</span> <span class="o">=</span> <span class="mi">3</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+<span class="n">Y2</span> <span class="o">=</span> <span class="mi">1</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">X</span><span class="o">/</span><span class="mf">0.75</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span>
+<span class="n">Y3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="n">Y1</span><span class="p">,</span> <span class="n">Y2</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">X</span><span class="p">))</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">dpi</span> <span class="o">=</span> <span class="mi">200</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">aspect</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">minor_tick</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">pos</span><span class="p">):</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">x</span> <span class="o">%</span> <span class="mf">1.0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s2">&#34;&#34;</span>
+    <span class="k">return</span> <span class="n">f</span><span class="s2">&#34;{x:.2f}&#34;</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_major_locator</span><span class="p">(</span><span class="n">MultipleLocator</span><span class="p">(</span><span class="mf">1.000</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_minor_locator</span><span class="p">(</span><span class="n">AutoMinorLocator</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">yaxis</span><span class="o">.</span><span class="n">set_major_locator</span><span class="p">(</span><span class="n">MultipleLocator</span><span class="p">(</span><span class="mf">1.000</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">yaxis</span><span class="o">.</span><span class="n">set_minor_locator</span><span class="p">(</span><span class="n">AutoMinorLocator</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span>
+<span class="c1"># FuncFormatter is created and used automatically</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_minor_formatter</span><span class="p">(</span><span class="n">minor_tick</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">which</span><span class="o">=</span><span class="s1">&#39;major&#39;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">which</span><span class="o">=</span><span class="s1">&#39;major&#39;</span><span class="p">,</span> <span class="n">length</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">which</span><span class="o">=</span><span class="s1">&#39;minor&#39;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">labelsize</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">which</span><span class="o">=</span><span class="s1">&#39;minor&#39;</span><span class="p">,</span> <span class="n">length</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">labelsize</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">labelcolor</span><span class="o">=</span><span class="s1">&#39;0.25&#39;</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">linestyle</span><span class="o">=</span><span class="s2">&#34;--&#34;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;.25&#39;</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=-</span><span class="mi">10</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y1</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="p">(</span><span class="mf">0.25</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">,</span> <span class="mf">1.00</span><span class="p">),</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&#34;Blue signal&#34;</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y2</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="p">(</span><span class="mf">1.00</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">),</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&#34;Red signal&#34;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y3</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+        <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">markerfacecolor</span><span class="o">=</span><span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">markeredgecolor</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&#34;Anatomy of a figure&#34;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">verticalalignment</span><span class="o">=</span><span class="s1">&#39;bottom&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&#34;X axis label&#34;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&#34;Y axis label&#34;</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+
+
+<span class="k">def</span> <span class="nf">circle</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">radius</span><span class="o">=</span><span class="mf">0.15</span><span class="p">):</span>
+    <span class="kn">from</span> <span class="nn">matplotlib.patches</span> <span class="kn">import</span> <span class="n">Circle</span>
+    <span class="kn">from</span> <span class="nn">matplotlib.patheffects</span> <span class="kn">import</span> <span class="n">withStroke</span>
+    <span class="n">circle</span> <span class="o">=</span> <span class="n">Circle</span><span class="p">((</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">),</span> <span class="n">radius</span><span class="p">,</span> <span class="n">clip_on</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+                    <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">.</span><span class="mo">0125</span><span class="p">),</span>
+                    <span class="n">path_effects</span><span class="o">=</span><span class="p">[</span><span class="n">withStroke</span><span class="p">(</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">foreground</span><span class="o">=</span><span class="s1">&#39;w&#39;</span><span class="p">)])</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">add_artist</span><span class="p">(</span><span class="n">circle</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">text</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">text</span><span class="p">):</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">text</span><span class="p">,</span> <span class="n">backgroundcolor</span><span class="o">=</span><span class="s2">&#34;white&#34;</span><span class="p">,</span>
+            <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s1">&#39;top&#39;</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="s1">&#39;bold&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
+
+
+<span class="c1"># Minor tick</span>
+<span class="n">circle</span><span class="p">(</span><span class="mf">0.50</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.10</span><span class="p">)</span>
+<span class="n">text</span><span class="p">(</span><span class="mf">0.50</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.32</span><span class="p">,</span> <span class="s2">&#34;Minor tick label&#34;</span><span class="p">)</span>
+
+<span class="c1"># Major tick</span>
+<span class="n">circle</span><span class="p">(</span><span class="o">-</span><span class="mf">0.03</span><span class="p">,</span> <span class="mf">4.00</span><span class="p">)</span>
+<span class="n">text</span><span class="p">(</span><span class="mf">0.03</span><span class="p">,</span> <span class="mf">3.80</span><span class="p">,</span> <span class="s2">&#34;Major tick&#34;</span><span class="p">)</span>
+
+<span class="c1"># Minor tick</span>
+<span class="n">circle</span><span class="p">(</span><span class="mf">0.00</span><span class="p">,</span> <span class="mf">3.50</span><span class="p">)</span>
+<span class="n">text</span><span class="p">(</span><span class="mf">0.00</span><span class="p">,</span> <span class="mf">3.30</span><span class="p">,</span> <span class="s2">&#34;Minor tick&#34;</span><span class="p">)</span>
+
+<span class="c1"># Major tick label</span>
+<span class="n">circle</span><span class="p">(</span><span class="o">-</span><span class="mf">0.15</span><span class="p">,</span> <span class="mf">3.00</span><span class="p">)</span>
+<span class="n">text</span><span class="p">(</span><span class="o">-</span><span class="mf">0.15</span><span class="p">,</span> <span class="mf">2.80</span><span class="p">,</span> <span class="s2">&#34;Major tick label&#34;</span><span class="p">)</span>
+
+<span class="c1"># X Label</span>
+<span class="n">circle</span><span class="p">(</span><span class="mf">1.80</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.27</span><span class="p">)</span>
+<span class="n">text</span><span class="p">(</span><span class="mf">1.80</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.45</span><span class="p">,</span> <span class="s2">&#34;X axis label&#34;</span><span class="p">)</span>
+
+<span class="c1"># Y Label</span>
+<span class="n">circle</span><span class="p">(</span><span class="o">-</span><span class="mf">0.27</span><span class="p">,</span> <span class="mf">1.80</span><span class="p">)</span>
+<span class="n">text</span><span class="p">(</span><span class="o">-</span><span class="mf">0.27</span><span class="p">,</span> <span class="mf">1.6</span><span class="p">,</span> <span class="s2">&#34;Y axis label&#34;</span><span class="p">)</span>
+
+<span class="c1"># Title</span>
+<span class="n">circle</span><span class="p">(</span><span class="mf">1.60</span><span class="p">,</span> <span class="mf">4.13</span><span class="p">)</span>
+<span class="n">text</span><span class="p">(</span><span class="mf">1.60</span><span class="p">,</span> <span class="mf">3.93</span><span class="p">,</span> <span class="s2">&#34;Title&#34;</span><span class="p">)</span>
+
+<span class="c1"># Blue plot</span>
+<span class="n">circle</span><span class="p">(</span><span class="mf">1.75</span><span class="p">,</span> <span class="mf">2.80</span><span class="p">)</span>
+<span class="n">text</span><span class="p">(</span><span class="mf">1.75</span><span class="p">,</span> <span class="mf">2.60</span><span class="p">,</span> <span class="s2">&#34;Line</span><span class="se">\n</span><span class="s2">(line plot)&#34;</span><span class="p">)</span>
+
+<span class="c1"># Red plot</span>
+<span class="n">circle</span><span class="p">(</span><span class="mf">1.20</span><span class="p">,</span> <span class="mf">0.60</span><span class="p">)</span>
+<span class="n">text</span><span class="p">(</span><span class="mf">1.20</span><span class="p">,</span> <span class="mf">0.40</span><span class="p">,</span> <span class="s2">&#34;Line</span><span class="se">\n</span><span class="s2">(line plot)&#34;</span><span class="p">)</span>
+
+<span class="c1"># Scatter plot</span>
+<span class="n">circle</span><span class="p">(</span><span class="mf">3.20</span><span class="p">,</span> <span class="mf">1.75</span><span class="p">)</span>
+<span class="n">text</span><span class="p">(</span><span class="mf">3.20</span><span class="p">,</span> <span class="mf">1.55</span><span class="p">,</span> <span class="s2">&#34;Markers</span><span class="se">\n</span><span class="s2">(scatter plot)&#34;</span><span class="p">)</span>
+
+<span class="c1"># Grid</span>
+<span class="n">circle</span><span class="p">(</span><span class="mf">3.00</span><span class="p">,</span> <span class="mf">3.00</span><span class="p">)</span>
+<span class="n">text</span><span class="p">(</span><span class="mf">3.00</span><span class="p">,</span> <span class="mf">2.80</span><span class="p">,</span> <span class="s2">&#34;Grid&#34;</span><span class="p">)</span>
+
+<span class="c1"># Legend</span>
+<span class="n">circle</span><span class="p">(</span><span class="mf">3.70</span><span class="p">,</span> <span class="mf">3.80</span><span class="p">)</span>
+<span class="n">text</span><span class="p">(</span><span class="mf">3.70</span><span class="p">,</span> <span class="mf">3.60</span><span class="p">,</span> <span class="s2">&#34;Legend&#34;</span><span class="p">)</span>
+
+<span class="c1"># Axes</span>
+<span class="n">circle</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span>
+<span class="n">text</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="s2">&#34;Axes&#34;</span><span class="p">)</span>
+
+<span class="c1"># Figure</span>
+<span class="n">circle</span><span class="p">(</span><span class="o">-</span><span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.65</span><span class="p">)</span>
+<span class="n">text</span><span class="p">(</span><span class="o">-</span><span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.45</span><span class="p">,</span> <span class="s2">&#34;Figure&#34;</span><span class="p">)</span>
+
+<span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;blue&#39;</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="s1">&#39;Spines&#39;</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="mf">4.0</span><span class="p">,</span> <span class="mf">0.35</span><span class="p">),</span> <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="mf">3.3</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">),</span>
+            <span class="n">weight</span><span class="o">=</span><span class="s1">&#39;bold&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span>
+            <span class="n">arrowprops</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">arrowstyle</span><span class="o">=</span><span class="s1">&#39;-&gt;&#39;</span><span class="p">,</span>
+                            <span class="n">connectionstyle</span><span class="o">=</span><span class="s2">&#34;arc3&#34;</span><span class="p">,</span>
+                            <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">))</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="mf">3.15</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">),</span> <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="mf">3.45</span><span class="p">,</span> <span class="mf">0.45</span><span class="p">),</span>
+            <span class="n">weight</span><span class="o">=</span><span class="s1">&#39;bold&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span>
+            <span class="n">arrowprops</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">arrowstyle</span><span class="o">=</span><span class="s1">&#39;-&gt;&#39;</span><span class="p">,</span>
+                            <span class="n">connectionstyle</span><span class="o">=</span><span class="s2">&#34;arc3&#34;</span><span class="p">,</span>
+                            <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">))</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">4.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.4</span><span class="p">,</span> <span class="s2">&#34;Made with https://matplotlib.org&#34;</span><span class="p">,</span>
+        <span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s2">&#34;right&#34;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;.5&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;Anatomy_of_a_figure.png&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></td></tr></table>
+</div>
+</div><hr>
+<h3 id="24-期刊版面构造">2.4. 期刊版面构造</h3>
+<p>当然，除了科研图片的构造外，大家也应该知晓各个期刊的版面布局。给大家提供两个著名期刊的版面构造，如下图所示：</p>
+<figure><a class="lightgallery" href="/images/learning/python-studying/plotfigure/pagelayout.png" title="/images/learning/python-studying/plotfigure/pagelayout.png" data-thumbnail="/images/learning/python-studying/plotfigure/pagelayout.png" data-sub-html="<h2>Fig.5. 期刊版面的构造</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/images/learning/python-studying/plotfigure/pagelayout.png"
+            data-srcset="/images/learning/python-studying/plotfigure/pagelayout.png, /images/learning/python-studying/plotfigure/pagelayout.png 1.5x, /images/learning/python-studying/plotfigure/pagelayout.png 2x"
+            data-sizes="auto"
+            alt="/images/learning/python-studying/plotfigure/pagelayout.png" width="100%" />
+    </a><figcaption class="image-caption">Fig.5. 期刊版面的构造</figcaption>
+    </figure>
+<hr>
+<h3 id="24-自建样式">2.4. 自建样式</h3>
+<h4 id="241-自建样式的使用">2.4.1. 自建样式的使用</h4>
+<p>其实，自建样式是非常之简单的！✌️</p>
+<p>只需要创建文件后缀名为<code>.mplstyle</code>的文件，并将它和绘图的<code>.py</code>文件放在相同的文件夹内，通过命令<code>plt.style.use(&quot;./yourstylename.mplstyle&quot;)</code>调用就行</p>
+<p><font color="red"><strong>如果想全局调用</strong></font>的话也非常之简单，将<code>.mplstyle</code>文件放入<code>../matplotlib/mpl-data/stylelib</code>目录下，即可。这个目录需要你动手找找了，搜索后缀名<code>.mplstyle</code>也能迅速定位，这个目录下你还可以看到<code>seaborn</code>的系列样式，虽然我不是很喜欢😅</p>
+<p>之后，通过命令<code>plt.style.use(&quot;yourstylename&quot;)</code>调用就行😘</p>
+<h4 id="242-自建样式的撰写">2.4.2. 自建样式的撰写</h4>
+<p>参考下述官方文档，将你想要修改的内容解除注释即可😋</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">  1
+</span><span class="lnt">  2
+</span><span class="lnt">  3
+</span><span class="lnt">  4
+</span><span class="lnt">  5
+</span><span class="lnt">  6
+</span><span class="lnt">  7
+</span><span class="lnt">  8
+</span><span class="lnt">  9
+</span><span class="lnt"> 10
+</span><span class="lnt"> 11
+</span><span class="lnt"> 12
+</span><span class="lnt"> 13
+</span><span class="lnt"> 14
+</span><span class="lnt"> 15
+</span><span class="lnt"> 16
+</span><span class="lnt"> 17
+</span><span class="lnt"> 18
+</span><span class="lnt"> 19
+</span><span class="lnt"> 20
+</span><span class="lnt"> 21
+</span><span class="lnt"> 22
+</span><span class="lnt"> 23
+</span><span class="lnt"> 24
+</span><span class="lnt"> 25
+</span><span class="lnt"> 26
+</span><span class="lnt"> 27
+</span><span class="lnt"> 28
+</span><span class="lnt"> 29
+</span><span class="lnt"> 30
+</span><span class="lnt"> 31
+</span><span class="lnt"> 32
+</span><span class="lnt"> 33
+</span><span class="lnt"> 34
+</span><span class="lnt"> 35
+</span><span class="lnt"> 36
+</span><span class="lnt"> 37
+</span><span class="lnt"> 38
+</span><span class="lnt"> 39
+</span><span class="lnt"> 40
+</span><span class="lnt"> 41
+</span><span class="lnt"> 42
+</span><span class="lnt"> 43
+</span><span class="lnt"> 44
+</span><span class="lnt"> 45
+</span><span class="lnt"> 46
+</span><span class="lnt"> 47
+</span><span class="lnt"> 48
+</span><span class="lnt"> 49
+</span><span class="lnt"> 50
+</span><span class="lnt"> 51
+</span><span class="lnt"> 52
+</span><span class="lnt"> 53
+</span><span class="lnt"> 54
+</span><span class="lnt"> 55
+</span><span class="lnt"> 56
+</span><span class="lnt"> 57
+</span><span class="lnt"> 58
+</span><span class="lnt"> 59
+</span><span class="lnt"> 60
+</span><span class="lnt"> 61
+</span><span class="lnt"> 62
+</span><span class="lnt"> 63
+</span><span class="lnt"> 64
+</span><span class="lnt"> 65
+</span><span class="lnt"> 66
+</span><span class="lnt"> 67
+</span><span class="lnt"> 68
+</span><span class="lnt"> 69
+</span><span class="lnt"> 70
+</span><span class="lnt"> 71
+</span><span class="lnt"> 72
+</span><span class="lnt"> 73
+</span><span class="lnt"> 74
+</span><span class="lnt"> 75
+</span><span class="lnt"> 76
+</span><span class="lnt"> 77
+</span><span class="lnt"> 78
+</span><span class="lnt"> 79
+</span><span class="lnt"> 80
+</span><span class="lnt"> 81
+</span><span class="lnt"> 82
+</span><span class="lnt"> 83
+</span><span class="lnt"> 84
+</span><span class="lnt"> 85
+</span><span class="lnt"> 86
+</span><span class="lnt"> 87
+</span><span class="lnt"> 88
+</span><span class="lnt"> 89
+</span><span class="lnt"> 90
+</span><span class="lnt"> 91
+</span><span class="lnt"> 92
+</span><span class="lnt"> 93
+</span><span class="lnt"> 94
+</span><span class="lnt"> 95
+</span><span class="lnt"> 96
+</span><span class="lnt"> 97
+</span><span class="lnt"> 98
+</span><span class="lnt"> 99
+</span><span class="lnt">100
+</span><span class="lnt">101
+</span><span class="lnt">102
+</span><span class="lnt">103
+</span><span class="lnt">104
+</span><span class="lnt">105
+</span><span class="lnt">106
+</span><span class="lnt">107
+</span><span class="lnt">108
+</span><span class="lnt">109
+</span><span class="lnt">110
+</span><span class="lnt">111
+</span><span class="lnt">112
+</span><span class="lnt">113
+</span><span class="lnt">114
+</span><span class="lnt">115
+</span><span class="lnt">116
+</span><span class="lnt">117
+</span><span class="lnt">118
+</span><span class="lnt">119
+</span><span class="lnt">120
+</span><span class="lnt">121
+</span><span class="lnt">122
+</span><span class="lnt">123
+</span><span class="lnt">124
+</span><span class="lnt">125
+</span><span class="lnt">126
+</span><span class="lnt">127
+</span><span class="lnt">128
+</span><span class="lnt">129
+</span><span class="lnt">130
+</span><span class="lnt">131
+</span><span class="lnt">132
+</span><span class="lnt">133
+</span><span class="lnt">134
+</span><span class="lnt">135
+</span><span class="lnt">136
+</span><span class="lnt">137
+</span><span class="lnt">138
+</span><span class="lnt">139
+</span><span class="lnt">140
+</span><span class="lnt">141
+</span><span class="lnt">142
+</span><span class="lnt">143
+</span><span class="lnt">144
+</span><span class="lnt">145
+</span><span class="lnt">146
+</span><span class="lnt">147
+</span><span class="lnt">148
+</span><span class="lnt">149
+</span><span class="lnt">150
+</span><span class="lnt">151
+</span><span class="lnt">152
+</span><span class="lnt">153
+</span><span class="lnt">154
+</span><span class="lnt">155
+</span><span class="lnt">156
+</span><span class="lnt">157
+</span><span class="lnt">158
+</span><span class="lnt">159
+</span><span class="lnt">160
+</span><span class="lnt">161
+</span><span class="lnt">162
+</span><span class="lnt">163
+</span><span class="lnt">164
+</span><span class="lnt">165
+</span><span class="lnt">166
+</span><span class="lnt">167
+</span><span class="lnt">168
+</span><span class="lnt">169
+</span><span class="lnt">170
+</span><span class="lnt">171
+</span><span class="lnt">172
+</span><span class="lnt">173
+</span><span class="lnt">174
+</span><span class="lnt">175
+</span><span class="lnt">176
+</span><span class="lnt">177
+</span><span class="lnt">178
+</span><span class="lnt">179
+</span><span class="lnt">180
+</span><span class="lnt">181
+</span><span class="lnt">182
+</span><span class="lnt">183
+</span><span class="lnt">184
+</span><span class="lnt">185
+</span><span class="lnt">186
+</span><span class="lnt">187
+</span><span class="lnt">188
+</span><span class="lnt">189
+</span><span class="lnt">190
+</span><span class="lnt">191
+</span><span class="lnt">192
+</span><span class="lnt">193
+</span><span class="lnt">194
+</span><span class="lnt">195
+</span><span class="lnt">196
+</span><span class="lnt">197
+</span><span class="lnt">198
+</span><span class="lnt">199
+</span><span class="lnt">200
+</span><span class="lnt">201
+</span><span class="lnt">202
+</span><span class="lnt">203
+</span><span class="lnt">204
+</span><span class="lnt">205
+</span><span class="lnt">206
+</span><span class="lnt">207
+</span><span class="lnt">208
+</span><span class="lnt">209
+</span><span class="lnt">210
+</span><span class="lnt">211
+</span><span class="lnt">212
+</span><span class="lnt">213
+</span><span class="lnt">214
+</span><span class="lnt">215
+</span><span class="lnt">216
+</span><span class="lnt">217
+</span><span class="lnt">218
+</span><span class="lnt">219
+</span><span class="lnt">220
+</span><span class="lnt">221
+</span><span class="lnt">222
+</span><span class="lnt">223
+</span><span class="lnt">224
+</span><span class="lnt">225
+</span><span class="lnt">226
+</span><span class="lnt">227
+</span><span class="lnt">228
+</span><span class="lnt">229
+</span><span class="lnt">230
+</span><span class="lnt">231
+</span><span class="lnt">232
+</span><span class="lnt">233
+</span><span class="lnt">234
+</span><span class="lnt">235
+</span><span class="lnt">236
+</span><span class="lnt">237
+</span><span class="lnt">238
+</span><span class="lnt">239
+</span><span class="lnt">240
+</span><span class="lnt">241
+</span><span class="lnt">242
+</span><span class="lnt">243
+</span><span class="lnt">244
+</span><span class="lnt">245
+</span><span class="lnt">246
+</span><span class="lnt">247
+</span><span class="lnt">248
+</span><span class="lnt">249
+</span><span class="lnt">250
+</span><span class="lnt">251
+</span><span class="lnt">252
+</span><span class="lnt">253
+</span><span class="lnt">254
+</span><span class="lnt">255
+</span><span class="lnt">256
+</span><span class="lnt">257
+</span><span class="lnt">258
+</span><span class="lnt">259
+</span><span class="lnt">260
+</span><span class="lnt">261
+</span><span class="lnt">262
+</span><span class="lnt">263
+</span><span class="lnt">264
+</span><span class="lnt">265
+</span><span class="lnt">266
+</span><span class="lnt">267
+</span><span class="lnt">268
+</span><span class="lnt">269
+</span><span class="lnt">270
+</span><span class="lnt">271
+</span><span class="lnt">272
+</span><span class="lnt">273
+</span><span class="lnt">274
+</span><span class="lnt">275
+</span><span class="lnt">276
+</span><span class="lnt">277
+</span><span class="lnt">278
+</span><span class="lnt">279
+</span><span class="lnt">280
+</span><span class="lnt">281
+</span><span class="lnt">282
+</span><span class="lnt">283
+</span><span class="lnt">284
+</span><span class="lnt">285
+</span><span class="lnt">286
+</span><span class="lnt">287
+</span><span class="lnt">288
+</span><span class="lnt">289
+</span><span class="lnt">290
+</span><span class="lnt">291
+</span><span class="lnt">292
+</span><span class="lnt">293
+</span><span class="lnt">294
+</span><span class="lnt">295
+</span><span class="lnt">296
+</span><span class="lnt">297
+</span><span class="lnt">298
+</span><span class="lnt">299
+</span><span class="lnt">300
+</span><span class="lnt">301
+</span><span class="lnt">302
+</span><span class="lnt">303
+</span><span class="lnt">304
+</span><span class="lnt">305
+</span><span class="lnt">306
+</span><span class="lnt">307
+</span><span class="lnt">308
+</span><span class="lnt">309
+</span><span class="lnt">310
+</span><span class="lnt">311
+</span><span class="lnt">312
+</span><span class="lnt">313
+</span><span class="lnt">314
+</span><span class="lnt">315
+</span><span class="lnt">316
+</span><span class="lnt">317
+</span><span class="lnt">318
+</span><span class="lnt">319
+</span><span class="lnt">320
+</span><span class="lnt">321
+</span><span class="lnt">322
+</span><span class="lnt">323
+</span><span class="lnt">324
+</span><span class="lnt">325
+</span><span class="lnt">326
+</span><span class="lnt">327
+</span><span class="lnt">328
+</span><span class="lnt">329
+</span><span class="lnt">330
+</span><span class="lnt">331
+</span><span class="lnt">332
+</span><span class="lnt">333
+</span><span class="lnt">334
+</span><span class="lnt">335
+</span><span class="lnt">336
+</span><span class="lnt">337
+</span><span class="lnt">338
+</span><span class="lnt">339
+</span><span class="lnt">340
+</span><span class="lnt">341
+</span><span class="lnt">342
+</span><span class="lnt">343
+</span><span class="lnt">344
+</span><span class="lnt">345
+</span><span class="lnt">346
+</span><span class="lnt">347
+</span><span class="lnt">348
+</span><span class="lnt">349
+</span><span class="lnt">350
+</span><span class="lnt">351
+</span><span class="lnt">352
+</span><span class="lnt">353
+</span><span class="lnt">354
+</span><span class="lnt">355
+</span><span class="lnt">356
+</span><span class="lnt">357
+</span><span class="lnt">358
+</span><span class="lnt">359
+</span><span class="lnt">360
+</span><span class="lnt">361
+</span><span class="lnt">362
+</span><span class="lnt">363
+</span><span class="lnt">364
+</span><span class="lnt">365
+</span><span class="lnt">366
+</span><span class="lnt">367
+</span><span class="lnt">368
+</span><span class="lnt">369
+</span><span class="lnt">370
+</span><span class="lnt">371
+</span><span class="lnt">372
+</span><span class="lnt">373
+</span><span class="lnt">374
+</span><span class="lnt">375
+</span><span class="lnt">376
+</span><span class="lnt">377
+</span><span class="lnt">378
+</span><span class="lnt">379
+</span><span class="lnt">380
+</span><span class="lnt">381
+</span><span class="lnt">382
+</span><span class="lnt">383
+</span><span class="lnt">384
+</span><span class="lnt">385
+</span><span class="lnt">386
+</span><span class="lnt">387
+</span><span class="lnt">388
+</span><span class="lnt">389
+</span><span class="lnt">390
+</span><span class="lnt">391
+</span><span class="lnt">392
+</span><span class="lnt">393
+</span><span class="lnt">394
+</span><span class="lnt">395
+</span><span class="lnt">396
+</span><span class="lnt">397
+</span><span class="lnt">398
+</span><span class="lnt">399
+</span><span class="lnt">400
+</span><span class="lnt">401
+</span><span class="lnt">402
+</span><span class="lnt">403
+</span><span class="lnt">404
+</span><span class="lnt">405
+</span><span class="lnt">406
+</span><span class="lnt">407
+</span><span class="lnt">408
+</span><span class="lnt">409
+</span><span class="lnt">410
+</span><span class="lnt">411
+</span><span class="lnt">412
+</span><span class="lnt">413
+</span><span class="lnt">414
+</span><span class="lnt">415
+</span><span class="lnt">416
+</span><span class="lnt">417
+</span><span class="lnt">418
+</span><span class="lnt">419
+</span><span class="lnt">420
+</span><span class="lnt">421
+</span><span class="lnt">422
+</span><span class="lnt">423
+</span><span class="lnt">424
+</span><span class="lnt">425
+</span><span class="lnt">426
+</span><span class="lnt">427
+</span><span class="lnt">428
+</span><span class="lnt">429
+</span><span class="lnt">430
+</span><span class="lnt">431
+</span><span class="lnt">432
+</span><span class="lnt">433
+</span><span class="lnt">434
+</span><span class="lnt">435
+</span><span class="lnt">436
+</span><span class="lnt">437
+</span><span class="lnt">438
+</span><span class="lnt">439
+</span><span class="lnt">440
+</span><span class="lnt">441
+</span><span class="lnt">442
+</span><span class="lnt">443
+</span><span class="lnt">444
+</span><span class="lnt">445
+</span><span class="lnt">446
+</span><span class="lnt">447
+</span><span class="lnt">448
+</span><span class="lnt">449
+</span><span class="lnt">450
+</span><span class="lnt">451
+</span><span class="lnt">452
+</span><span class="lnt">453
+</span><span class="lnt">454
+</span><span class="lnt">455
+</span><span class="lnt">456
+</span><span class="lnt">457
+</span><span class="lnt">458
+</span><span class="lnt">459
+</span><span class="lnt">460
+</span><span class="lnt">461
+</span><span class="lnt">462
+</span><span class="lnt">463
+</span><span class="lnt">464
+</span><span class="lnt">465
+</span><span class="lnt">466
+</span><span class="lnt">467
+</span><span class="lnt">468
+</span><span class="lnt">469
+</span><span class="lnt">470
+</span><span class="lnt">471
+</span><span class="lnt">472
+</span><span class="lnt">473
+</span><span class="lnt">474
+</span><span class="lnt">475
+</span><span class="lnt">476
+</span><span class="lnt">477
+</span><span class="lnt">478
+</span><span class="lnt">479
+</span><span class="lnt">480
+</span><span class="lnt">481
+</span><span class="lnt">482
+</span><span class="lnt">483
+</span><span class="lnt">484
+</span><span class="lnt">485
+</span><span class="lnt">486
+</span><span class="lnt">487
+</span><span class="lnt">488
+</span><span class="lnt">489
+</span><span class="lnt">490
+</span><span class="lnt">491
+</span><span class="lnt">492
+</span><span class="lnt">493
+</span><span class="lnt">494
+</span><span class="lnt">495
+</span><span class="lnt">496
+</span><span class="lnt">497
+</span><span class="lnt">498
+</span><span class="lnt">499
+</span><span class="lnt">500
+</span><span class="lnt">501
+</span><span class="lnt">502
+</span><span class="lnt">503
+</span><span class="lnt">504
+</span><span class="lnt">505
+</span><span class="lnt">506
+</span><span class="lnt">507
+</span><span class="lnt">508
+</span><span class="lnt">509
+</span><span class="lnt">510
+</span><span class="lnt">511
+</span><span class="lnt">512
+</span><span class="lnt">513
+</span><span class="lnt">514
+</span><span class="lnt">515
+</span><span class="lnt">516
+</span><span class="lnt">517
+</span><span class="lnt">518
+</span><span class="lnt">519
+</span><span class="lnt">520
+</span><span class="lnt">521
+</span><span class="lnt">522
+</span><span class="lnt">523
+</span><span class="lnt">524
+</span><span class="lnt">525
+</span><span class="lnt">526
+</span><span class="lnt">527
+</span><span class="lnt">528
+</span><span class="lnt">529
+</span><span class="lnt">530
+</span><span class="lnt">531
+</span><span class="lnt">532
+</span><span class="lnt">533
+</span><span class="lnt">534
+</span><span class="lnt">535
+</span><span class="lnt">536
+</span><span class="lnt">537
+</span><span class="lnt">538
+</span><span class="lnt">539
+</span><span class="lnt">540
+</span><span class="lnt">541
+</span><span class="lnt">542
+</span><span class="lnt">543
+</span><span class="lnt">544
+</span><span class="lnt">545
+</span><span class="lnt">546
+</span><span class="lnt">547
+</span><span class="lnt">548
+</span><span class="lnt">549
+</span><span class="lnt">550
+</span><span class="lnt">551
+</span><span class="lnt">552
+</span><span class="lnt">553
+</span><span class="lnt">554
+</span><span class="lnt">555
+</span><span class="lnt">556
+</span><span class="lnt">557
+</span><span class="lnt">558
+</span><span class="lnt">559
+</span><span class="lnt">560
+</span><span class="lnt">561
+</span><span class="lnt">562
+</span><span class="lnt">563
+</span><span class="lnt">564
+</span><span class="lnt">565
+</span><span class="lnt">566
+</span><span class="lnt">567
+</span><span class="lnt">568
+</span><span class="lnt">569
+</span><span class="lnt">570
+</span><span class="lnt">571
+</span><span class="lnt">572
+</span><span class="lnt">573
+</span><span class="lnt">574
+</span><span class="lnt">575
+</span><span class="lnt">576
+</span><span class="lnt">577
+</span><span class="lnt">578
+</span><span class="lnt">579
+</span><span class="lnt">580
+</span><span class="lnt">581
+</span><span class="lnt">582
+</span><span class="lnt">583
+</span><span class="lnt">584
+</span><span class="lnt">585
+</span><span class="lnt">586
+</span><span class="lnt">587
+</span><span class="lnt">588
+</span><span class="lnt">589
+</span><span class="lnt">590
+</span><span class="lnt">591
+</span><span class="lnt">592
+</span><span class="lnt">593
+</span><span class="lnt">594
+</span><span class="lnt">595
+</span><span class="lnt">596
+</span><span class="lnt">597
+</span><span class="lnt">598
+</span><span class="lnt">599
+</span><span class="lnt">600
+</span><span class="lnt">601
+</span><span class="lnt">602
+</span><span class="lnt">603
+</span><span class="lnt">604
+</span><span class="lnt">605
+</span><span class="lnt">606
+</span><span class="lnt">607
+</span><span class="lnt">608
+</span><span class="lnt">609
+</span><span class="lnt">610
+</span><span class="lnt">611
+</span><span class="lnt">612
+</span><span class="lnt">613
+</span><span class="lnt">614
+</span><span class="lnt">615
+</span><span class="lnt">616
+</span><span class="lnt">617
+</span><span class="lnt">618
+</span><span class="lnt">619
+</span><span class="lnt">620
+</span><span class="lnt">621
+</span><span class="lnt">622
+</span><span class="lnt">623
+</span><span class="lnt">624
+</span><span class="lnt">625
+</span><span class="lnt">626
+</span><span class="lnt">627
+</span><span class="lnt">628
+</span><span class="lnt">629
+</span><span class="lnt">630
+</span><span class="lnt">631
+</span><span class="lnt">632
+</span><span class="lnt">633
+</span><span class="lnt">634
+</span><span class="lnt">635
+</span><span class="lnt">636
+</span><span class="lnt">637
+</span><span class="lnt">638
+</span><span class="lnt">639
+</span><span class="lnt">640
+</span><span class="lnt">641
+</span><span class="lnt">642
+</span><span class="lnt">643
+</span><span class="lnt">644
+</span><span class="lnt">645
+</span><span class="lnt">646
+</span><span class="lnt">647
+</span><span class="lnt">648
+</span><span class="lnt">649
+</span><span class="lnt">650
+</span><span class="lnt">651
+</span><span class="lnt">652
+</span><span class="lnt">653
+</span><span class="lnt">654
+</span><span class="lnt">655
+</span><span class="lnt">656
+</span><span class="lnt">657
+</span><span class="lnt">658
+</span><span class="lnt">659
+</span><span class="lnt">660
+</span><span class="lnt">661
+</span><span class="lnt">662
+</span><span class="lnt">663
+</span><span class="lnt">664
+</span><span class="lnt">665
+</span><span class="lnt">666
+</span><span class="lnt">667
+</span><span class="lnt">668
+</span><span class="lnt">669
+</span><span class="lnt">670
+</span><span class="lnt">671
+</span><span class="lnt">672
+</span><span class="lnt">673
+</span><span class="lnt">674
+</span><span class="lnt">675
+</span><span class="lnt">676
+</span><span class="lnt">677
+</span><span class="lnt">678
+</span><span class="lnt">679
+</span><span class="lnt">680
+</span><span class="lnt">681
+</span><span class="lnt">682
+</span><span class="lnt">683
+</span><span class="lnt">684
+</span><span class="lnt">685
+</span><span class="lnt">686
+</span><span class="lnt">687
+</span><span class="lnt">688
+</span><span class="lnt">689
+</span><span class="lnt">690
+</span><span class="lnt">691
+</span><span class="lnt">692
+</span><span class="lnt">693
+</span><span class="lnt">694
+</span><span class="lnt">695
+</span><span class="lnt">696
+</span><span class="lnt">697
+</span><span class="lnt">698
+</span><span class="lnt">699
+</span><span class="lnt">700
+</span><span class="lnt">701
+</span><span class="lnt">702
+</span><span class="lnt">703
+</span><span class="lnt">704
+</span><span class="lnt">705
+</span><span class="lnt">706
+</span><span class="lnt">707
+</span><span class="lnt">708
+</span><span class="lnt">709
+</span><span class="lnt">710
+</span><span class="lnt">711
+</span><span class="lnt">712
+</span><span class="lnt">713
+</span><span class="lnt">714
+</span><span class="lnt">715
+</span><span class="lnt">716
+</span><span class="lnt">717
+</span><span class="lnt">718
+</span><span class="lnt">719
+</span><span class="lnt">720
+</span><span class="lnt">721
+</span><span class="lnt">722
+</span><span class="lnt">723
+</span><span class="lnt">724
+</span><span class="lnt">725
+</span><span class="lnt">726
+</span><span class="lnt">727
+</span><span class="lnt">728
+</span><span class="lnt">729
+</span><span class="lnt">730
+</span><span class="lnt">731
+</span><span class="lnt">732
+</span><span class="lnt">733
+</span><span class="lnt">734
+</span><span class="lnt">735
+</span><span class="lnt">736
+</span><span class="lnt">737
+</span><span class="lnt">738
+</span><span class="lnt">739
+</span><span class="lnt">740
+</span><span class="lnt">741
+</span><span class="lnt">742
+</span><span class="lnt">743
+</span><span class="lnt">744
+</span><span class="lnt">745
+</span><span class="lnt">746
+</span><span class="lnt">747
+</span><span class="lnt">748
+</span><span class="lnt">749
+</span><span class="lnt">750
+</span><span class="lnt">751
+</span><span class="lnt">752
+</span><span class="lnt">753
+</span><span class="lnt">754
+</span><span class="lnt">755
+</span><span class="lnt">756
+</span><span class="lnt">757
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-Python" data-lang="Python"><span class="c1">#### MATPLOTLIBRC FORMAT</span>
+
+<span class="c1">## NOTE FOR END USERS: DO NOT EDIT THIS FILE!</span>
+<span class="c1">##</span>
+<span class="c1">## This is a sample matplotlib configuration file - you can find a copy</span>
+<span class="c1">## of it on your system in site-packages/matplotlib/mpl-data/matplotlibrc</span>
+<span class="c1">## (which related to your Python installation location).</span>
+<span class="c1">##</span>
+<span class="c1">## You should find a copy of it on your system at</span>
+<span class="c1">## site-packages/matplotlib/mpl-data/matplotlibrc (relative to your Python</span>
+<span class="c1">## installation location).  DO NOT EDIT IT!</span>
+<span class="c1">##</span>
+<span class="c1">## If you wish to change your default style, copy this file to one of the</span>
+<span class="c1">## following locations</span>
+<span class="c1">##     unix/linux:</span>
+<span class="c1">##         $HOME/.config/matplotlib/matplotlibrc OR</span>
+<span class="c1">##         $XDG_CONFIG_HOME/matplotlib/matplotlibrc (if $XDG_CONFIG_HOME is set)</span>
+<span class="c1">##     other platforms:</span>
+<span class="c1">##         $HOME/.matplotlib/matplotlibrc</span>
+<span class="c1">## and edit that copy.</span>
+<span class="c1">##</span>
+<span class="c1">## See https://matplotlib.org/users/customizing.html#the-matplotlibrc-file</span>
+<span class="c1">## for more details on the paths which are checked for the configuration file.</span>
+<span class="c1">##</span>
+<span class="c1">## Blank lines, or lines starting with a comment symbol, are ignored, as are</span>
+<span class="c1">## trailing comments.  Other lines must have the format:</span>
+<span class="c1">##     key: val  # optional comment</span>
+<span class="c1">##</span>
+<span class="c1">## Formatting: Use PEP8-like style (as enforced in the rest of the codebase).</span>
+<span class="c1">## All lines start with an additional &#39;#&#39;, so that removing all leading &#39;#&#39;s</span>
+<span class="c1">## yields a valid style file.</span>
+<span class="c1">##</span>
+<span class="c1">## Colors: for the color values below, you can either use</span>
+<span class="c1">##     - a matplotlib color string, such as r, k, or b</span>
+<span class="c1">##     - an rgb tuple, such as (1.0, 0.5, 0.0)</span>
+<span class="c1">##     - a hex string, such as ff00ff</span>
+<span class="c1">##     - a scalar grayscale intensity such as 0.75</span>
+<span class="c1">##     - a legal html color name, e.g., red, blue, darkslategray</span>
+<span class="c1">##</span>
+<span class="c1">## Matplotlib configuration are currently divided into following parts:</span>
+<span class="c1">##     - BACKENDS</span>
+<span class="c1">##     - LINES</span>
+<span class="c1">##     - PATCHES</span>
+<span class="c1">##     - HATCHES</span>
+<span class="c1">##     - BOXPLOT</span>
+<span class="c1">##     - FONT</span>
+<span class="c1">##     - TEXT</span>
+<span class="c1">##     - LaTeX</span>
+<span class="c1">##     - AXES</span>
+<span class="c1">##     - DATES</span>
+<span class="c1">##     - TICKS</span>
+<span class="c1">##     - GRIDS</span>
+<span class="c1">##     - LEGEND</span>
+<span class="c1">##     - FIGURE</span>
+<span class="c1">##     - IMAGES</span>
+<span class="c1">##     - CONTOUR PLOTS</span>
+<span class="c1">##     - ERRORBAR PLOTS</span>
+<span class="c1">##     - HISTOGRAM PLOTS</span>
+<span class="c1">##     - SCATTER PLOTS</span>
+<span class="c1">##     - AGG RENDERING</span>
+<span class="c1">##     - PATHS</span>
+<span class="c1">##     - SAVING FIGURES</span>
+<span class="c1">##     - INTERACTIVE KEYMAPS</span>
+<span class="c1">##     - ANIMATION</span>
+
+<span class="c1">##### CONFIGURATION BEGINS HERE</span>
+
+
+<span class="c1">## ***************************************************************************</span>
+<span class="c1">## * BACKENDS                                                                *</span>
+<span class="c1">## ***************************************************************************</span>
+<span class="c1">## The default backend.  If you omit this parameter, the first working</span>
+<span class="c1">## backend from the following list is used:</span>
+<span class="c1">##     MacOSX Qt5Agg Gtk3Agg TkAgg WxAgg Agg</span>
+<span class="c1">## Other choices include:</span>
+<span class="c1">##     Qt5Cairo GTK3Cairo TkCairo WxCairo Cairo</span>
+<span class="c1">##     Qt4Agg Qt4Cairo Wx  # deprecated.</span>
+<span class="c1">##     PS PDF SVG Template</span>
+<span class="c1">## You can also deploy your own backend outside of matplotlib by referring to</span>
+<span class="c1">## the module name (which must be in the PYTHONPATH) as &#39;module://my_backend&#39;.</span>
+<span class="c1">#backend: Agg</span>
+
+<span class="c1">## The port to use for the web server in the WebAgg backend.</span>
+<span class="c1">#webagg.port: 8988</span>
+
+<span class="c1">## The address on which the WebAgg web server should be reachable</span>
+<span class="c1">#webagg.address: 127.0.0.1</span>
+
+<span class="c1">## If webagg.port is unavailable, a number of other random ports will</span>
+<span class="c1">## be tried until one that is available is found.</span>
+<span class="c1">#webagg.port_retries: 50</span>
+
+<span class="c1">## When True, open the webbrowser to the plot that is shown</span>
+<span class="c1">#webagg.open_in_browser: True</span>
+
+<span class="c1">## If you are running pyplot inside a GUI and your backend choice</span>
+<span class="c1">## conflicts, we will automatically try to find a compatible one for</span>
+<span class="c1">## you if backend_fallback is True</span>
+<span class="c1">#backend_fallback: True</span>
+
+<span class="c1">#interactive: False</span>
+<span class="c1">#toolbar:     toolbar2  # {None, toolbar2, toolmanager}</span>
+<span class="c1">#timezone:    UTC       # a pytz timezone string, e.g., US/Central or Europe/Paris</span>
+
+
+<span class="c1">## ***************************************************************************</span>
+<span class="c1">## * LINES                                                                   *</span>
+<span class="c1">## ***************************************************************************</span>
+<span class="c1">## See https://matplotlib.org/api/artist_api.html#module-matplotlib.lines</span>
+<span class="c1">## for more information on line properties.</span>
+<span class="c1">#lines.linewidth: 1.5               # line width in points</span>
+<span class="c1">#lines.linestyle: -                 # solid line</span>
+<span class="c1">#lines.color:     C0                # has no affect on plot(); see axes.prop_cycle</span>
+<span class="c1">#lines.marker:          None        # the default marker</span>
+<span class="c1">#lines.markerfacecolor: auto        # the default marker face color</span>
+<span class="c1">#lines.markeredgecolor: auto        # the default marker edge color</span>
+<span class="c1">#lines.markeredgewidth: 1.0         # the line width around the marker symbol</span>
+<span class="c1">#lines.markersize:      6           # marker size, in points</span>
+<span class="c1">#lines.dash_joinstyle:  round       # {miter, round, bevel}</span>
+<span class="c1">#lines.dash_capstyle:   butt        # {butt, round, projecting}</span>
+<span class="c1">#lines.solid_joinstyle: round       # {miter, round, bevel}</span>
+<span class="c1">#lines.solid_capstyle:  projecting  # {butt, round, projecting}</span>
+<span class="c1">#lines.antialiased: True            # render lines in antialiased (no jaggies)</span>
+
+<span class="c1">## The three standard dash patterns.  These are scaled by the linewidth.</span>
+<span class="c1">#lines.dashed_pattern: 3.7, 1.6</span>
+<span class="c1">#lines.dashdot_pattern: 6.4, 1.6, 1, 1.6</span>
+<span class="c1">#lines.dotted_pattern: 1, 1.65</span>
+<span class="c1">#lines.scale_dashes: True</span>
+
+<span class="c1">#markers.fillstyle: full  # {full, left, right, bottom, top, none}</span>
+
+<span class="c1">#pcolor.shading : flat</span>
+
+<span class="c1">## ***************************************************************************</span>
+<span class="c1">## * PATCHES                                                                 *</span>
+<span class="c1">## ***************************************************************************</span>
+<span class="c1">## Patches are graphical objects that fill 2D space, like polygons or circles.</span>
+<span class="c1">## See https://matplotlib.org/api/artist_api.html#module-matplotlib.patches</span>
+<span class="c1">## for more information on patch properties.</span>
+<span class="c1">#patch.linewidth:       1      # edge width in points.</span>
+<span class="c1">#patch.facecolor:       C0</span>
+<span class="c1">#patch.edgecolor:       black  # if forced, or patch is not filled</span>
+<span class="c1">#patch.force_edgecolor: False  # True to always use edgecolor</span>
+<span class="c1">#patch.antialiased:     True   # render patches in antialiased (no jaggies)</span>
+
+
+<span class="c1">## ***************************************************************************</span>
+<span class="c1">## * HATCHES                                                                 *</span>
+<span class="c1">## ***************************************************************************</span>
+<span class="c1">#hatch.color:     black</span>
+<span class="c1">#hatch.linewidth: 1.0</span>
+
+
+<span class="c1">## ***************************************************************************</span>
+<span class="c1">## * BOXPLOT                                                                 *</span>
+<span class="c1">## ***************************************************************************</span>
+<span class="c1">#boxplot.notch:       False</span>
+<span class="c1">#boxplot.vertical:    True</span>
+<span class="c1">#boxplot.whiskers:    1.5</span>
+<span class="c1">#boxplot.bootstrap:   None</span>
+<span class="c1">#boxplot.patchartist: False</span>
+<span class="c1">#boxplot.showmeans:   False</span>
+<span class="c1">#boxplot.showcaps:    True</span>
+<span class="c1">#boxplot.showbox:     True</span>
+<span class="c1">#boxplot.showfliers:  True</span>
+<span class="c1">#boxplot.meanline:    False</span>
+
+<span class="c1">#boxplot.flierprops.color:           black</span>
+<span class="c1">#boxplot.flierprops.marker:          o</span>
+<span class="c1">#boxplot.flierprops.markerfacecolor: none</span>
+<span class="c1">#boxplot.flierprops.markeredgecolor: black</span>
+<span class="c1">#boxplot.flierprops.markeredgewidth: 1.0</span>
+<span class="c1">#boxplot.flierprops.markersize:      6</span>
+<span class="c1">#boxplot.flierprops.linestyle:       none</span>
+<span class="c1">#boxplot.flierprops.linewidth:       1.0</span>
+
+<span class="c1">#boxplot.boxprops.color:     black</span>
+<span class="c1">#boxplot.boxprops.linewidth: 1.0</span>
+<span class="c1">#boxplot.boxprops.linestyle: -</span>
+
+<span class="c1">#boxplot.whiskerprops.color:     black</span>
+<span class="c1">#boxplot.whiskerprops.linewidth: 1.0</span>
+<span class="c1">#boxplot.whiskerprops.linestyle: -</span>
+
+<span class="c1">#boxplot.capprops.color:     black</span>
+<span class="c1">#boxplot.capprops.linewidth: 1.0</span>
+<span class="c1">#boxplot.capprops.linestyle: -</span>
+
+<span class="c1">#boxplot.medianprops.color:     C1</span>
+<span class="c1">#boxplot.medianprops.linewidth: 1.0</span>
+<span class="c1">#boxplot.medianprops.linestyle: -</span>
+
+<span class="c1">#boxplot.meanprops.color:           C2</span>
+<span class="c1">#boxplot.meanprops.marker:          ^</span>
+<span class="c1">#boxplot.meanprops.markerfacecolor: C2</span>
+<span class="c1">#boxplot.meanprops.markeredgecolor: C2</span>
+<span class="c1">#boxplot.meanprops.markersize:       6</span>
+<span class="c1">#boxplot.meanprops.linestyle:       --</span>
+<span class="c1">#boxplot.meanprops.linewidth:       1.0</span>
+
+
+<span class="c1">## ***************************************************************************</span>
+<span class="c1">## * FONT                                                                    *</span>
+<span class="c1">## ***************************************************************************</span>
+<span class="c1">## The font properties used by `text.Text`.</span>
+<span class="c1">## See https://matplotlib.org/api/font_manager_api.html for more information</span>
+<span class="c1">## on font properties.  The 6 font properties used for font matching are</span>
+<span class="c1">## given below with their default values.</span>
+<span class="c1">##</span>
+<span class="c1">## The font.family property has five values:</span>
+<span class="c1">##     - &#39;serif&#39; (e.g., Times),</span>
+<span class="c1">##     - &#39;sans-serif&#39; (e.g., Helvetica),</span>
+<span class="c1">##     - &#39;cursive&#39; (e.g., Zapf-Chancery),</span>
+<span class="c1">##     - &#39;fantasy&#39; (e.g., Western), and</span>
+<span class="c1">##     - &#39;monospace&#39; (e.g., Courier).</span>
+<span class="c1">## Each of these font families has a default list of font names in decreasing</span>
+<span class="c1">## order of priority associated with them.  When text.usetex is False,</span>
+<span class="c1">## font.family may also be one or more concrete font names.</span>
+<span class="c1">##</span>
+<span class="c1">## The font.style property has three values: normal (or roman), italic</span>
+<span class="c1">## or oblique.  The oblique style will be used for italic, if it is not</span>
+<span class="c1">## present.</span>
+<span class="c1">##</span>
+<span class="c1">## The font.variant property has two values: normal or small-caps.  For</span>
+<span class="c1">## TrueType fonts, which are scalable fonts, small-caps is equivalent</span>
+<span class="c1">## to using a font size of &#39;smaller&#39;, or about 83%% of the current font</span>
+<span class="c1">## size.</span>
+<span class="c1">##</span>
+<span class="c1">## The font.weight property has effectively 13 values: normal, bold,</span>
+<span class="c1">## bolder, lighter, 100, 200, 300, ..., 900.  Normal is the same as</span>
+<span class="c1">## 400, and bold is 700.  bolder and lighter are relative values with</span>
+<span class="c1">## respect to the current weight.</span>
+<span class="c1">##</span>
+<span class="c1">## The font.stretch property has 11 values: ultra-condensed,</span>
+<span class="c1">## extra-condensed, condensed, semi-condensed, normal, semi-expanded,</span>
+<span class="c1">## expanded, extra-expanded, ultra-expanded, wider, and narrower.  This</span>
+<span class="c1">## property is not currently implemented.</span>
+<span class="c1">##</span>
+<span class="c1">## The font.size property is the default font size for text, given in pts.</span>
+<span class="c1">## 10 pt is the standard value.</span>
+<span class="c1">##</span>
+<span class="c1">## Note that font.size controls default text sizes.  To configure</span>
+<span class="c1">## special text sizes tick labels, axes, labels, title, etc, see the rc</span>
+<span class="c1">## settings for axes and ticks.  Special text sizes can be defined</span>
+<span class="c1">## relative to font.size, using the following values: xx-small, x-small,</span>
+<span class="c1">## small, medium, large, x-large, xx-large, larger, or smaller</span>
+
+<span class="c1">#font.family:  sans-serif</span>
+<span class="c1">#font.style:   normal</span>
+<span class="c1">#font.variant: normal</span>
+<span class="c1">#font.weight:  normal</span>
+<span class="c1">#font.stretch: normal</span>
+<span class="c1">#font.size:    10.0</span>
+
+<span class="c1">#font.serif:      DejaVu Serif, Bitstream Vera Serif, Computer Modern Roman, New Century Schoolbook, Century Schoolbook L, Utopia, ITC Bookman, Bookman, Nimbus Roman No9 L, Times New Roman, Times, Palatino, Charter, serif</span>
+<span class="c1">#font.sans-serif: DejaVu Sans, Bitstream Vera Sans, Computer Modern Sans Serif, Lucida Grande, Verdana, Geneva, Lucid, Arial, Helvetica, Avant Garde, sans-serif</span>
+<span class="c1">#font.cursive:    Apple Chancery, Textile, Zapf Chancery, Sand, Script MT, Felipa, cursive</span>
+<span class="c1">#font.fantasy:    Comic Neue, Comic Sans MS, Chicago, Charcoal, ImpactWestern, Humor Sans, xkcd, fantasy</span>
+<span class="c1">#font.monospace:  DejaVu Sans Mono, Bitstream Vera Sans Mono, Computer Modern Typewriter, Andale Mono, Nimbus Mono L, Courier New, Courier, Fixed, Terminal, monospace</span>
+
+
+<span class="c1">## ***************************************************************************</span>
+<span class="c1">## * TEXT                                                                    *</span>
+<span class="c1">## ***************************************************************************</span>
+<span class="c1">## The text properties used by `text.Text`.</span>
+<span class="c1">## See https://matplotlib.org/api/artist_api.html#module-matplotlib.text</span>
+<span class="c1">## for more information on text properties</span>
+<span class="c1">#text.color: black</span>
+
+
+<span class="c1">## ***************************************************************************</span>
+<span class="c1">## * LaTeX                                                                   *</span>
+<span class="c1">## ***************************************************************************</span>
+<span class="c1">## For more information on LaTex properties, see</span>
+<span class="c1">## https://matplotlib.org/tutorials/text/usetex.html</span>
+<span class="c1">#text.usetex: False  # use latex for all text handling. The following fonts</span>
+                     <span class="c1"># are supported through the usual rc parameter settings:</span>
+                     <span class="c1"># new century schoolbook, bookman, times, palatino,</span>
+                     <span class="c1"># zapf chancery, charter, serif, sans-serif, helvetica,</span>
+                     <span class="c1"># avant garde, courier, monospace, computer modern roman,</span>
+                     <span class="c1"># computer modern sans serif, computer modern typewriter</span>
+                     <span class="c1"># If another font is desired which can loaded using the</span>
+                     <span class="c1"># LaTeX \usepackage command, please inquire at the</span>
+                     <span class="c1"># matplotlib mailing list</span>
+<span class="c1">#text.latex.preamble:   # IMPROPER USE OF THIS FEATURE WILL LEAD TO LATEX FAILURES</span>
+                        <span class="c1"># AND IS THEREFORE UNSUPPORTED. PLEASE DO NOT ASK FOR HELP</span>
+                        <span class="c1"># IF THIS FEATURE DOES NOT DO WHAT YOU EXPECT IT TO.</span>
+                        <span class="c1"># text.latex.preamble is a single line of LaTeX code that</span>
+                        <span class="c1"># will be passed on to the LaTeX system. It may contain</span>
+                        <span class="c1"># any code that is valid for the LaTeX &#34;preamble&#34;, i.e.</span>
+                        <span class="c1"># between the &#34;\documentclass&#34; and &#34;\begin{document}&#34;</span>
+                        <span class="c1"># statements.</span>
+                        <span class="c1"># Note that it has to be put on a single line, which may</span>
+                        <span class="c1"># become quite long.</span>
+                        <span class="c1"># The following packages are always loaded with usetex, so</span>
+                        <span class="c1"># beware of package collisions: color, geometry, graphicx,</span>
+                        <span class="c1"># type1cm, textcomp.</span>
+                        <span class="c1"># Adobe Postscript (PSSNFS) font packages may also be</span>
+                        <span class="c1"># loaded, depending on your font settings.</span>
+
+<span class="c1">## FreeType hinting flag (&#34;foo&#34; corresponds to FT_LOAD_FOO); may be one of the</span>
+<span class="c1">## following (Proprietary Matplotlib-specific synonyms are given in parentheses,</span>
+<span class="c1">## but their use is discouraged):</span>
+<span class="c1">## - default: Use the font&#39;s native hinter if possible, else FreeType&#39;s auto-hinter.</span>
+<span class="c1">##            (&#34;either&#34; is a synonym).</span>
+<span class="c1">## - no_autohint: Use the font&#39;s native hinter if possible, else don&#39;t hint.</span>
+<span class="c1">##                (&#34;native&#34; is a synonym.)</span>
+<span class="c1">## - force_autohint: Use FreeType&#39;s auto-hinter.  (&#34;auto&#34; is a synonym.)</span>
+<span class="c1">## - no_hinting: Disable hinting.  (&#34;none&#34; is a synonym.)</span>
+<span class="c1">#text.hinting: force_autohint</span>
+
+<span class="c1">#text.hinting_factor: 8  # Specifies the amount of softness for hinting in the</span>
+                         <span class="c1"># horizontal direction.  A value of 1 will hint to full</span>
+                         <span class="c1"># pixels.  A value of 2 will hint to half pixels etc.</span>
+<span class="c1">#text.kerning_factor : 0  # Specifies the scaling factor for kerning values. This</span>
+                          <span class="c1"># is provided solely to allow old test images to remain</span>
+                          <span class="c1"># unchanged. Set to 6 to obtain previous behavior. Values</span>
+                          <span class="c1"># other than 0 or 6 have no defined meaning.</span>
+<span class="c1">#text.antialiased: True  # If True (default), the text will be antialiased.</span>
+                         <span class="c1"># This only affects the Agg backend.</span>
+
+<span class="c1">## The following settings allow you to select the fonts in math mode.</span>
+<span class="c1">#mathtext.fontset: dejavusans  # Should be &#39;dejavusans&#39; (default),</span>
+                               <span class="c1"># &#39;dejavuserif&#39;, &#39;cm&#39; (Computer Modern), &#39;stix&#39;,</span>
+                               <span class="c1"># &#39;stixsans&#39; or &#39;custom&#39; (unsupported, may go</span>
+                               <span class="c1"># away in the future)</span>
+<span class="c1">## &#34;mathtext.fontset: custom&#34; is defined by the mathtext.bf, .cal, .it, ...</span>
+<span class="c1">## settings which map a TeX font name to a fontconfig font pattern.  (These</span>
+<span class="c1">## settings are not used for other font sets.)</span>
+<span class="c1">#mathtext.bf:  sans:bold</span>
+<span class="c1">#mathtext.cal: cursive</span>
+<span class="c1">#mathtext.it:  sans:italic</span>
+<span class="c1">#mathtext.rm:  sans</span>
+<span class="c1">#mathtext.sf:  sans</span>
+<span class="c1">#mathtext.tt:  monospace</span>
+<span class="c1">#mathtext.fallback: cm  # Select fallback font from [&#39;cm&#39; (Computer Modern), &#39;stix&#39;</span>
+                        <span class="c1"># &#39;stixsans&#39;] when a symbol can not be found in one of the</span>
+                        <span class="c1"># custom math fonts. Select &#39;None&#39; to not perform fallback</span>
+                        <span class="c1"># and replace the missing character by a dummy symbol.</span>
+<span class="c1">#mathtext.default: it  # The default font to use for math.</span>
+                       <span class="c1"># Can be any of the LaTeX font names, including</span>
+                       <span class="c1"># the special name &#34;regular&#34; for the same font</span>
+                       <span class="c1"># used in regular text.</span>
+
+
+<span class="c1">## ***************************************************************************</span>
+<span class="c1">## * AXES                                                                    *</span>
+<span class="c1">## ***************************************************************************</span>
+<span class="c1">## Following are default face and edge colors, default tick sizes,</span>
+<span class="c1">## default fontsizes for ticklabels, and so on.  See</span>
+<span class="c1">## https://matplotlib.org/api/axes_api.html#module-matplotlib.axes</span>
+<span class="c1">#axes.facecolor:     white   # axes background color</span>
+<span class="c1">#axes.edgecolor:     black   # axes edge color</span>
+<span class="c1">#axes.linewidth:     0.8     # edge linewidth</span>
+<span class="c1">#axes.grid:          False   # display grid or not</span>
+<span class="c1">#axes.grid.axis:     both    # which axis the grid should apply to</span>
+<span class="c1">#axes.grid.which:    major   # gridlines at {major, minor, both} ticks</span>
+<span class="c1">#axes.titlelocation: center  # alignment of the title: {left, right, center}</span>
+<span class="c1">#axes.titlesize:     large   # fontsize of the axes title</span>
+<span class="c1">#axes.titleweight:   normal  # font weight of title</span>
+<span class="c1">#axes.titlecolor:    auto    # color of the axes title, auto falls back to</span>
+                             <span class="c1"># text.color as default value</span>
+<span class="c1">#axes.titley:        None    # position title (axes relative units).  None implies auto</span>
+<span class="c1">#axes.titlepad:      6.0     # pad between axes and title in points</span>
+<span class="c1">#axes.labelsize:     medium  # fontsize of the x any y labels</span>
+<span class="c1">#axes.labelpad:      4.0     # space between label and axis</span>
+<span class="c1">#axes.labelweight:   normal  # weight of the x and y labels</span>
+<span class="c1">#axes.labelcolor:    black</span>
+<span class="c1">#axes.axisbelow:     line    # draw axis gridlines and ticks:</span>
+                             <span class="c1">#     - below patches (True)</span>
+                             <span class="c1">#     - above patches but below lines (&#39;line&#39;)</span>
+                             <span class="c1">#     - above all (False)</span>
+
+<span class="c1">#axes.formatter.limits: -5, 6  # use scientific notation if log10</span>
+                               <span class="c1"># of the axis range is smaller than the</span>
+                               <span class="c1"># first or larger than the second</span>
+<span class="c1">#axes.formatter.use_locale: False  # When True, format tick labels</span>
+                                   <span class="c1"># according to the user&#39;s locale.</span>
+                                   <span class="c1"># For example, use &#39;,&#39; as a decimal</span>
+                                   <span class="c1"># separator in the fr_FR locale.</span>
+<span class="c1">#axes.formatter.use_mathtext: False  # When True, use mathtext for scientific</span>
+                                     <span class="c1"># notation.</span>
+<span class="c1">#axes.formatter.min_exponent: 0  # minimum exponent to format in scientific notation</span>
+<span class="c1">#axes.formatter.useoffset: True  # If True, the tick label formatter</span>
+                                 <span class="c1"># will default to labeling ticks relative</span>
+                                 <span class="c1"># to an offset when the data range is</span>
+                                 <span class="c1"># small compared to the minimum absolute</span>
+                                 <span class="c1"># value of the data.</span>
+<span class="c1">#axes.formatter.offset_threshold: 4  # When useoffset is True, the offset</span>
+                                     <span class="c1"># will be used when it can remove</span>
+                                     <span class="c1"># at least this number of significant</span>
+                                     <span class="c1"># digits from tick labels.</span>
+
+<span class="c1">#axes.spines.left:   True  # display axis spines</span>
+<span class="c1">#axes.spines.bottom: True</span>
+<span class="c1">#axes.spines.top:    True</span>
+<span class="c1">#axes.spines.right:  True</span>
+
+<span class="c1">#axes.unicode_minus: True  # use Unicode for the minus symbol rather than hyphen.  See</span>
+                           <span class="c1"># https://en.wikipedia.org/wiki/Plus_and_minus_signs#Character_codes</span>
+<span class="c1">#axes.prop_cycle: cycler(&#39;color&#39;, [&#39;1f77b4&#39;, &#39;ff7f0e&#39;, &#39;2ca02c&#39;, &#39;d62728&#39;, &#39;9467bd&#39;, &#39;8c564b&#39;, &#39;e377c2&#39;, &#39;7f7f7f&#39;, &#39;bcbd22&#39;, &#39;17becf&#39;])</span>
+                  <span class="c1"># color cycle for plot lines as list of string colorspecs:</span>
+                  <span class="c1"># single letter, long name, or web-style hex</span>
+                  <span class="c1"># As opposed to all other paramters in this file, the color</span>
+                  <span class="c1"># values must be enclosed in quotes for this parameter,</span>
+                  <span class="c1"># e.g. &#39;1f77b4&#39;, instead of 1f77b4.</span>
+                  <span class="c1"># See also https://matplotlib.org/tutorials/intermediate/color_cycle.html</span>
+                  <span class="c1"># for more details on prop_cycle usage.</span>
+<span class="c1">#axes.autolimit_mode: data  # How to scale axes limits to the data.  By using:</span>
+                            <span class="c1">#     - &#34;data&#34; to use data limits, plus some margin</span>
+                            <span class="c1">#     - &#34;round_numbers&#34; move to the nearest &#34;round&#34; number</span>
+<span class="c1">#axes.xmargin:   .05  # x margin.  See `axes.Axes.margins`</span>
+<span class="c1">#axes.ymargin:   .05  # y margin.  See `axes.Axes.margins`</span>
+<span class="c1">#polaraxes.grid: True  # display grid on polar axes</span>
+<span class="c1">#axes3d.grid:    True  # display grid on 3d axes</span>
+
+
+<span class="c1">## ***************************************************************************</span>
+<span class="c1">## * AXIS                                                                    *</span>
+<span class="c1">## ***************************************************************************</span>
+<span class="c1">#xaxis.labellocation: center  # alignment of the xaxis label: {left, right, center}</span>
+<span class="c1">#yaxis.labellocation: center  # alignment of the yaxis label: {bottom, top, center}</span>
+
+
+<span class="c1">## ***************************************************************************</span>
+<span class="c1">## * DATES                                                                   *</span>
+<span class="c1">## ***************************************************************************</span>
+<span class="c1">## These control the default format strings used in AutoDateFormatter.</span>
+<span class="c1">## Any valid format datetime format string can be used (see the python</span>
+<span class="c1">## `datetime` for details).  For example, by using:</span>
+<span class="c1">##     - &#39;%%x&#39; will use the locale date representation</span>
+<span class="c1">##     - &#39;%%X&#39; will use the locale time representation</span>
+<span class="c1">##     - &#39;%%c&#39; will use the full locale datetime representation</span>
+<span class="c1">## These values map to the scales:</span>
+<span class="c1">##     {&#39;year&#39;: 365, &#39;month&#39;: 30, &#39;day&#39;: 1, &#39;hour&#39;: 1/24, &#39;minute&#39;: 1 / (24 * 60)}</span>
+
+<span class="c1">#date.autoformatter.year:        %Y</span>
+<span class="c1">#date.autoformatter.month:       %Y-%m</span>
+<span class="c1">#date.autoformatter.day:         %Y-%m-%d</span>
+<span class="c1">#date.autoformatter.hour:        %m-%d %H</span>
+<span class="c1">#date.autoformatter.minute:      %d %H:%M</span>
+<span class="c1">#date.autoformatter.second:      %H:%M:%S</span>
+<span class="c1">#date.autoformatter.microsecond: %M:%S.%f</span>
+
+<span class="c1">## The reference date for Matplotlib&#39;s internal date representation</span>
+<span class="c1">## See https://matplotlib.org/examples/ticks_and_spines/date_precision_and_epochs.py</span>
+<span class="c1">#date.epoch: 1970-01-01T00:00:00</span>
+
+<span class="c1">## ***************************************************************************</span>
+<span class="c1">## * TICKS                                                                   *</span>
+<span class="c1">## ***************************************************************************</span>
+<span class="c1">## See https://matplotlib.org/api/axis_api.html#matplotlib.axis.Tick</span>
+<span class="c1">#xtick.top:           False   # draw ticks on the top side</span>
+<span class="c1">#xtick.bottom:        True    # draw ticks on the bottom side</span>
+<span class="c1">#xtick.labeltop:      False   # draw label on the top</span>
+<span class="c1">#xtick.labelbottom:   True    # draw label on the bottom</span>
+<span class="c1">#xtick.major.size:    3.5     # major tick size in points</span>
+<span class="c1">#xtick.minor.size:    2       # minor tick size in points</span>
+<span class="c1">#xtick.major.width:   0.8     # major tick width in points</span>
+<span class="c1">#xtick.minor.width:   0.6     # minor tick width in points</span>
+<span class="c1">#xtick.major.pad:     3.5     # distance to major tick label in points</span>
+<span class="c1">#xtick.minor.pad:     3.4     # distance to the minor tick label in points</span>
+<span class="c1">#xtick.color:         black   # color of the tick labels</span>
+<span class="c1">#xtick.labelsize:     medium  # fontsize of the tick labels</span>
+<span class="c1">#xtick.direction:     out     # direction: {in, out, inout}</span>
+<span class="c1">#xtick.minor.visible: False   # visibility of minor ticks on x-axis</span>
+<span class="c1">#xtick.major.top:     True    # draw x axis top major ticks</span>
+<span class="c1">#xtick.major.bottom:  True    # draw x axis bottom major ticks</span>
+<span class="c1">#xtick.minor.top:     True    # draw x axis top minor ticks</span>
+<span class="c1">#xtick.minor.bottom:  True    # draw x axis bottom minor ticks</span>
+<span class="c1">#xtick.alignment:     center  # alignment of xticks</span>
+
+<span class="c1">#ytick.left:          True    # draw ticks on the left side</span>
+<span class="c1">#ytick.right:         False   # draw ticks on the right side</span>
+<span class="c1">#ytick.labelleft:     True    # draw tick labels on the left side</span>
+<span class="c1">#ytick.labelright:    False   # draw tick labels on the right side</span>
+<span class="c1">#ytick.major.size:    3.5     # major tick size in points</span>
+<span class="c1">#ytick.minor.size:    2       # minor tick size in points</span>
+<span class="c1">#ytick.major.width:   0.8     # major tick width in points</span>
+<span class="c1">#ytick.minor.width:   0.6     # minor tick width in points</span>
+<span class="c1">#ytick.major.pad:     3.5     # distance to major tick label in points</span>
+<span class="c1">#ytick.minor.pad:     3.4     # distance to the minor tick label in points</span>
+<span class="c1">#ytick.color:         black   # color of the tick labels</span>
+<span class="c1">#ytick.labelsize:     medium  # fontsize of the tick labels</span>
+<span class="c1">#ytick.direction:     out     # direction: {in, out, inout}</span>
+<span class="c1">#ytick.minor.visible: False   # visibility of minor ticks on y-axis</span>
+<span class="c1">#ytick.major.left:    True    # draw y axis left major ticks</span>
+<span class="c1">#ytick.major.right:   True    # draw y axis right major ticks</span>
+<span class="c1">#ytick.minor.left:    True    # draw y axis left minor ticks</span>
+<span class="c1">#ytick.minor.right:   True    # draw y axis right minor ticks</span>
+<span class="c1">#ytick.alignment:     center_baseline  # alignment of yticks</span>
+
+
+<span class="c1">## ***************************************************************************</span>
+<span class="c1">## * GRIDS                                                                   *</span>
+<span class="c1">## ***************************************************************************</span>
+<span class="c1">#grid.color:     b0b0b0  # grid color</span>
+<span class="c1">#grid.linestyle: -       # solid</span>
+<span class="c1">#grid.linewidth: 0.8     # in points</span>
+<span class="c1">#grid.alpha:     1.0     # transparency, between 0.0 and 1.0</span>
+
+
+<span class="c1">## ***************************************************************************</span>
+<span class="c1">## * LEGEND                                                                  *</span>
+<span class="c1">## ***************************************************************************</span>
+<span class="c1">#legend.loc:           best</span>
+<span class="c1">#legend.frameon:       True     # if True, draw the legend on a background patch</span>
+<span class="c1">#legend.framealpha:    0.8      # legend patch transparency</span>
+<span class="c1">#legend.facecolor:     inherit  # inherit from axes.facecolor; or color spec</span>
+<span class="c1">#legend.edgecolor:     0.8      # background patch boundary color</span>
+<span class="c1">#legend.fancybox:      True     # if True, use a rounded box for the</span>
+                                <span class="c1"># legend background, else a rectangle</span>
+<span class="c1">#legend.shadow:        False    # if True, give background a shadow effect</span>
+<span class="c1">#legend.numpoints:     1        # the number of marker points in the legend line</span>
+<span class="c1">#legend.scatterpoints: 1        # number of scatter points</span>
+<span class="c1">#legend.markerscale:   1.0      # the relative size of legend markers vs. original</span>
+<span class="c1">#legend.fontsize:      medium</span>
+<span class="c1">#legend.title_fontsize: None    # None sets to the same as the default axes.</span>
+
+<span class="c1">## Dimensions as fraction of fontsize:</span>
+<span class="c1">#legend.borderpad:     0.4  # border whitespace</span>
+<span class="c1">#legend.labelspacing:  0.5  # the vertical space between the legend entries</span>
+<span class="c1">#legend.handlelength:  2.0  # the length of the legend lines</span>
+<span class="c1">#legend.handleheight:  0.7  # the height of the legend handle</span>
+<span class="c1">#legend.handletextpad: 0.8  # the space between the legend line and legend text</span>
+<span class="c1">#legend.borderaxespad: 0.5  # the border between the axes and legend edge</span>
+<span class="c1">#legend.columnspacing: 2.0  # column separation</span>
+
+
+<span class="c1">## ***************************************************************************</span>
+<span class="c1">## * FIGURE                                                                  *</span>
+<span class="c1">## ***************************************************************************</span>
+<span class="c1">## See https://matplotlib.org/api/figure_api.html#matplotlib.figure.Figure</span>
+<span class="c1">#figure.titlesize:   large     # size of the figure title (``Figure.suptitle()``)</span>
+<span class="c1">#figure.titleweight: normal    # weight of the figure title</span>
+<span class="c1">#figure.figsize:     6.4, 4.8  # figure size in inches</span>
+<span class="c1">#figure.dpi:         100       # figure dots per inch</span>
+<span class="c1">#figure.facecolor:   white     # figure facecolor</span>
+<span class="c1">#figure.edgecolor:   white     # figure edgecolor</span>
+<span class="c1">#figure.frameon:     True      # enable figure frame</span>
+<span class="c1">#figure.max_open_warning: 20   # The maximum number of figures to open through</span>
+                               <span class="c1"># the pyplot interface before emitting a warning.</span>
+                               <span class="c1"># If less than one this feature is disabled.</span>
+<span class="c1">#figure.raise_window : True    # Raise the GUI window to front when show() is called.</span>
+
+<span class="c1">## The figure subplot parameters.  All dimensions are a fraction of the figure width and height.</span>
+<span class="c1">#figure.subplot.left:   0.125  # the left side of the subplots of the figure</span>
+<span class="c1">#figure.subplot.right:  0.9    # the right side of the subplots of the figure</span>
+<span class="c1">#figure.subplot.bottom: 0.11   # the bottom of the subplots of the figure</span>
+<span class="c1">#figure.subplot.top:    0.88   # the top of the subplots of the figure</span>
+<span class="c1">#figure.subplot.wspace: 0.2    # the amount of width reserved for space between subplots,</span>
+                               <span class="c1"># expressed as a fraction of the average axis width</span>
+<span class="c1">#figure.subplot.hspace: 0.2    # the amount of height reserved for space between subplots,</span>
+                               <span class="c1"># expressed as a fraction of the average axis height</span>
+
+<span class="c1">## Figure layout</span>
+<span class="c1">#figure.autolayout: False  # When True, automatically adjust subplot</span>
+                           <span class="c1"># parameters to make the plot fit the figure</span>
+                           <span class="c1"># using `tight_layout`</span>
+<span class="c1">#figure.constrained_layout.use: False  # When True, automatically make plot</span>
+                                       <span class="c1"># elements fit on the figure. (Not</span>
+                                       <span class="c1"># compatible with `autolayout`, above).</span>
+<span class="c1">#figure.constrained_layout.h_pad:  0.04167  # Padding around axes objects. Float representing</span>
+<span class="c1">#figure.constrained_layout.w_pad:  0.04167  # inches. Default is 3./72. inches (3 pts)</span>
+<span class="c1">#figure.constrained_layout.hspace: 0.02     # Space between subplot groups. Float representing</span>
+<span class="c1">#figure.constrained_layout.wspace: 0.02     # a fraction of the subplot widths being separated.</span>
+
+
+<span class="c1">## ***************************************************************************</span>
+<span class="c1">## * IMAGES                                                                  *</span>
+<span class="c1">## ***************************************************************************</span>
+<span class="c1">#image.aspect: equal                # {equal, auto} or a number</span>
+<span class="c1">#image.interpolation:  antialiased  # see help(imshow) for options</span>
+<span class="c1">#image.cmap:   viridis              # A colormap name, gray etc...</span>
+<span class="c1">#image.lut:    256                  # the size of the colormap lookup table</span>
+<span class="c1">#image.origin: upper                # {lower, upper}</span>
+<span class="c1">#image.resample:  True</span>
+<span class="c1">#image.composite_image: True  # When True, all the images on a set of axes are</span>
+                              <span class="c1"># combined into a single composite image before</span>
+                              <span class="c1"># saving a figure as a vector graphics file,</span>
+                              <span class="c1"># such as a PDF.</span>
+
+
+<span class="c1">## ***************************************************************************</span>
+<span class="c1">## * CONTOUR PLOTS                                                           *</span>
+<span class="c1">## ***************************************************************************</span>
+<span class="c1">#contour.negative_linestyle: dashed  # string or on-off ink sequence</span>
+<span class="c1">#contour.corner_mask:        True    # {True, False, legacy}</span>
+<span class="c1">#contour.linewidth:          None    # {float, None} Size of the contour</span>
+                                     <span class="c1"># linewidths. If set to None,</span>
+                                     <span class="c1"># it falls back to `line.linewidth`.</span>
+
+
+<span class="c1">## ***************************************************************************</span>
+<span class="c1">## * ERRORBAR PLOTS                                                          *</span>
+<span class="c1">## ***************************************************************************</span>
+<span class="c1">#errorbar.capsize: 0  # length of end cap on error bars in pixels</span>
+
+
+<span class="c1">## ***************************************************************************</span>
+<span class="c1">## * HISTOGRAM PLOTS                                                         *</span>
+<span class="c1">## ***************************************************************************</span>
+<span class="c1">#hist.bins: 10  # The default number of histogram bins or &#39;auto&#39;.</span>
+
+
+<span class="c1">## ***************************************************************************</span>
+<span class="c1">## * SCATTER PLOTS                                                           *</span>
+<span class="c1">## ***************************************************************************</span>
+<span class="c1">#scatter.marker: o         # The default marker type for scatter plots.</span>
+<span class="c1">#scatter.edgecolors: face  # The default edge colors for scatter plots.</span>
+
+
+<span class="c1">## ***************************************************************************</span>
+<span class="c1">## * AGG RENDERING                                                           *</span>
+<span class="c1">## ***************************************************************************</span>
+<span class="c1">## Warning: experimental, 2008/10/10</span>
+<span class="c1">#agg.path.chunksize: 0  # 0 to disable; values in the range</span>
+                        <span class="c1"># 10000 to 100000 can improve speed slightly</span>
+                        <span class="c1"># and prevent an Agg rendering failure</span>
+                        <span class="c1"># when plotting very large data sets,</span>
+                        <span class="c1"># especially if they are very gappy.</span>
+                        <span class="c1"># It may cause minor artifacts, though.</span>
+                        <span class="c1"># A value of 20000 is probably a good</span>
+                        <span class="c1"># starting point.</span>
+
+
+<span class="c1">## ***************************************************************************</span>
+<span class="c1">## * PATHS                                                                   *</span>
+<span class="c1">## ***************************************************************************</span>
+<span class="c1">#path.simplify: True  # When True, simplify paths by removing &#34;invisible&#34;</span>
+                      <span class="c1"># points to reduce file size and increase rendering</span>
+                      <span class="c1"># speed</span>
+<span class="c1">#path.simplify_threshold: 0.111111111111  # The threshold of similarity below</span>
+                                          <span class="c1"># which vertices will be removed in</span>
+                                          <span class="c1"># the simplification process.</span>
+<span class="c1">#path.snap: True  # When True, rectilinear axis-aligned paths will be snapped</span>
+                  <span class="c1"># to the nearest pixel when certain criteria are met.</span>
+                  <span class="c1"># When False, paths will never be snapped.</span>
+<span class="c1">#path.sketch: None  # May be None, or a 3-tuple of the form:</span>
+                    <span class="c1"># (scale, length, randomness).</span>
+                    <span class="c1">#     - *scale* is the amplitude of the wiggle</span>
+                    <span class="c1">#         perpendicular to the line (in pixels).</span>
+                    <span class="c1">#     - *length* is the length of the wiggle along the</span>
+                    <span class="c1">#         line (in pixels).</span>
+                    <span class="c1">#     - *randomness* is the factor by which the length is</span>
+                    <span class="c1">#         randomly scaled.</span>
+<span class="c1">#path.effects:</span>
+
+
+<span class="c1">## ***************************************************************************</span>
+<span class="c1">## * SAVING FIGURES                                                          *</span>
+<span class="c1">## ***************************************************************************</span>
+<span class="c1">## The default savefig params can be different from the display params</span>
+<span class="c1">## e.g., you may want a higher resolution, or to make the figure</span>
+<span class="c1">## background white</span>
+<span class="c1">#savefig.dpi:       figure      # figure dots per inch or &#39;figure&#39;</span>
+<span class="c1">#savefig.facecolor: auto        # figure facecolor when saving</span>
+<span class="c1">#savefig.edgecolor: auto        # figure edgecolor when saving</span>
+<span class="c1">#savefig.format:    png         # {png, ps, pdf, svg}</span>
+<span class="c1">#savefig.bbox:      standard    # {tight, standard}</span>
+                                <span class="c1"># &#39;tight&#39; is incompatible with pipe-based animation</span>
+                                <span class="c1"># backends (e.g. &#39;ffmpeg&#39;) but will work with those</span>
+                                <span class="c1"># based on temporary files (e.g. &#39;ffmpeg_file&#39;)</span>
+<span class="c1">#savefig.pad_inches:   0.1      # Padding to be used when bbox is set to &#39;tight&#39;</span>
+<span class="c1">#savefig.directory:    ~        # default directory in savefig dialog box,</span>
+                                <span class="c1"># leave empty to always use current working directory</span>
+<span class="c1">#savefig.transparent: False     # setting that controls whether figures are saved with a</span>
+                                <span class="c1"># transparent background by default</span>
+<span class="c1">#savefig.orientation: portrait  # Orientation of saved figure</span>
+
+<span class="c1">### tk backend params</span>
+<span class="c1">#tk.window_focus:   False  # Maintain shell focus for TkAgg</span>
+
+<span class="c1">### ps backend params</span>
+<span class="c1">#ps.papersize:      letter  # {auto, letter, legal, ledger, A0-A10, B0-B10}</span>
+<span class="c1">#ps.useafm:         False   # use of afm fonts, results in small files</span>
+<span class="c1">#ps.usedistiller:   False   # {ghostscript, xpdf, None}</span>
+                            <span class="c1"># Experimental: may produce smaller files.</span>
+                            <span class="c1"># xpdf intended for production of publication quality files,</span>
+                            <span class="c1"># but requires ghostscript, xpdf and ps2eps</span>
+<span class="c1">#ps.distiller.res:  6000    # dpi</span>
+<span class="c1">#ps.fonttype:       3       # Output Type 3 (Type3) or Type 42 (TrueType)</span>
+
+<span class="c1">### PDF backend params</span>
+<span class="c1">#pdf.compression:    6  # integer from 0 to 9</span>
+                        <span class="c1"># 0 disables compression (good for debugging)</span>
+<span class="c1">#pdf.fonttype:       3  # Output Type 3 (Type3) or Type 42 (TrueType)</span>
+<span class="c1">#pdf.use14corefonts : False</span>
+<span class="c1">#pdf.inheritcolor:   False</span>
+
+<span class="c1">### SVG backend params</span>
+<span class="c1">#svg.image_inline: True  # Write raster image data directly into the SVG file</span>
+<span class="c1">#svg.fonttype: path      # How to handle SVG fonts:</span>
+                         <span class="c1">#     path: Embed characters as paths -- supported</span>
+                         <span class="c1">#           by most SVG renderers</span>
+                         <span class="c1">#     None: Assume fonts are installed on the</span>
+                         <span class="c1">#           machine where the SVG will be viewed.</span>
+<span class="c1">#svg.hashsalt: None      # If not None, use this string as hash salt instead of uuid4</span>
+
+<span class="c1">### pgf parameter</span>
+<span class="c1">## See https://matplotlib.org/tutorials/text/pgf.html for more information.</span>
+<span class="c1">#pgf.rcfonts: True</span>
+<span class="c1">#pgf.preamble:  # See text.latex.preamble for documentation</span>
+<span class="c1">#pgf.texsystem: xelatex</span>
+
+<span class="c1">### docstring params</span>
+<span class="c1">#docstring.hardcopy: False  # set this when you want to generate hardcopy docstring</span>
+
+
+<span class="c1">## ***************************************************************************</span>
+<span class="c1">## * INTERACTIVE KEYMAPS                                                     *</span>
+<span class="c1">## ***************************************************************************</span>
+<span class="c1">## Event keys to interact with figures/plots via keyboard.</span>
+<span class="c1">## See https://matplotlib.org/users/navigation_toolbar.html for more details on</span>
+<span class="c1">## interactive navigation.  Customize these settings according to your needs.</span>
+<span class="c1">## Leave the field(s) empty if you don&#39;t need a key-map. (i.e., fullscreen : &#39;&#39;)</span>
+<span class="c1">#keymap.fullscreen: f, ctrl+f   # toggling</span>
+<span class="c1">#keymap.home: h, r, home        # home or reset mnemonic</span>
+<span class="c1">#keymap.back: left, c, backspace, MouseButton.BACK  # forward / backward keys</span>
+<span class="c1">#keymap.forward: right, v, MouseButton.FORWARD      # for quick navigation</span>
+<span class="c1">#keymap.pan: p                  # pan mnemonic</span>
+<span class="c1">#keymap.zoom: o                 # zoom mnemonic</span>
+<span class="c1">#keymap.save: s, ctrl+s         # saving current figure</span>
+<span class="c1">#keymap.help: f1                # display help about active tools</span>
+<span class="c1">#keymap.quit: ctrl+w, cmd+w, q  # close the current figure</span>
+<span class="c1">#keymap.quit_all:               # close all figures</span>
+<span class="c1">#keymap.grid: g                 # switching on/off major grids in current axes</span>
+<span class="c1">#keymap.grid_minor: G           # switching on/off minor grids in current axes</span>
+<span class="c1">#keymap.yscale: l               # toggle scaling of y-axes (&#39;log&#39;/&#39;linear&#39;)</span>
+<span class="c1">#keymap.xscale: k, L            # toggle scaling of x-axes (&#39;log&#39;/&#39;linear&#39;)</span>
+<span class="c1">#keymap.copy: ctrl+c, cmd+c     # Copy figure to clipboard</span>
+
+
+<span class="c1">## ***************************************************************************</span>
+<span class="c1">## * ANIMATION                                                               *</span>
+<span class="c1">## ***************************************************************************</span>
+<span class="c1">#animation.html: none  # How to display the animation as HTML in</span>
+                       <span class="c1"># the IPython notebook:</span>
+                       <span class="c1">#     - &#39;html5&#39; uses HTML5 video tag</span>
+                       <span class="c1">#     - &#39;jshtml&#39; creates a Javascript animation</span>
+<span class="c1">#animation.writer:  ffmpeg        # MovieWriter &#39;backend&#39; to use</span>
+<span class="c1">#animation.codec:   h264          # Codec to use for writing movie</span>
+<span class="c1">#animation.bitrate: -1            # Controls size/quality tradeoff for movie.</span>
+                                  <span class="c1"># -1 implies let utility auto-determine</span>
+<span class="c1">#animation.frame_format: png      # Controls frame format used by temp files</span>
+<span class="c1">#animation.ffmpeg_path:  ffmpeg   # Path to ffmpeg binary. Without full path</span>
+                                  <span class="c1"># $PATH is searched</span>
+<span class="c1">#animation.ffmpeg_args:           # Additional arguments to pass to ffmpeg</span>
+<span class="c1">#animation.convert_path: convert  # Path to ImageMagick&#39;s convert binary.</span>
+                                  <span class="c1"># On Windows use the full path since convert</span>
+                                  <span class="c1"># is also the name of a system tool.</span>
+<span class="c1">#animation.convert_args:          # Additional arguments to pass to convert</span>
+<span class="c1">#animation.embed_limit:  20.0     # Limit, in MB, of size of base64 encoded</span>
+                                  <span class="c1"># animation in HTML (i.e. IPython notebook)</span>
+
+<span class="c1">#mpl_toolkits.legacy_colorbar: True</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>接下来，详细介绍下<code>.mplstyle</code>文件中各种设置，比较着急的朋友也可以跳过下章内容，自行继续摸索😁</p>
+<p>展示一张用我的样式模板绘制出来的图片：
+<figure><a class="lightgallery" href="/images/learning/python-studying/plotfigure/mystyle.png" title="/images/learning/python-studying/plotfigure/mystyle.png" data-thumbnail="/images/learning/python-studying/plotfigure/mystyle.png" data-sub-html="<h2>Fig.6. 展示样式</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/images/learning/python-studying/plotfigure/mystyle.png"
+            data-srcset="/images/learning/python-studying/plotfigure/mystyle.png, /images/learning/python-studying/plotfigure/mystyle.png 1.5x, /images/learning/python-studying/plotfigure/mystyle.png 2x"
+            data-sizes="auto"
+            alt="/images/learning/python-studying/plotfigure/mystyle.png" width="80%" />
+    </a><figcaption class="image-caption">Fig.6. 展示样式</figcaption>
+    </figure></p>
+<hr>
+<h2 id="3-样式的设置">3. 样式的设置</h2></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2021-01-28</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/learning-python-matplotlib/index.md" target="_blank">阅读原始文档</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="http://example.org/learning-python-matplotlib/" data-title="Python-Matplotlib"><i class="fab fa-evernote fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/python/">Python</a>,&nbsp;<a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>,&nbsp;<a href="/tags/%E7%A7%91%E7%A0%94%E7%BB%98%E5%9B%BE/">科研绘图</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/learning-python-basic/" class="prev" rel="prev" title="Python-Basic"><i class="fas fa-angle-left fa-fw"></i>Python-Basic</a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.80.0">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">Yuan Z.X.</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/twemoji/twemoji.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js"></script><script type="text/javascript" src="/lib/katex/auto-render.min.js"></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js"></script><script type="text/javascript" src="/lib/katex/mhchem.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":35},"comment":{},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"},"twemoji":true};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

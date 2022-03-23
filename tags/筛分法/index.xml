@@ -1,0 +1,15 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>筛分法 - 标签 - 万事屋</title>
+        <link>http://example.org/tags/%E7%AD%9B%E5%88%86%E6%B3%95/</link>
+        <description>筛分法 - 标签 - 万事屋</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>yuanzhx@126.com (Yuan Z.X.)</managingEditor>
+            <webMaster>yuanzhx@126.com (Yuan Z.X.)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Fri, 20 Dec 2019 00:00:00 &#43;0800</lastBuildDate><atom:link href="http://example.org/tags/%E7%AD%9B%E5%88%86%E6%B3%95/" rel="self" type="application/rss+xml" /><item>
+    <title>土工筛分法相关参考规范</title>
+    <link>http://example.org/science-sieve/</link>
+    <pubDate>Fri, 20 Dec 2019 00:00:00 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/science-sieve/</guid>
+    <description><![CDATA[土体的颗粒大小和颗粒级配在土木工程中，特别是在岩土工程中，扮演着重要的地位。]]></description>
+</item></channel>
+</rss>
