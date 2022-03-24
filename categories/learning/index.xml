@@ -1,8 +1,8 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>learning - 分类 - 万事屋</title>
+        <title>Learning - 分类 - 万事屋</title>
         <link>http://example.org/categories/learning/</link>
-        <description>learning - 分类 - 万事屋</description>
+        <description>Learning - 分类 - 万事屋</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>yuanzhx@126.com (Yuan Z.X.)</managingEditor>
             <webMaster>yuanzhx@126.com (Yuan Z.X.)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Thu, 21 Jan 2021 00:00:00 &#43;0800</lastBuildDate><atom:link href="http://example.org/categories/learning/" rel="self" type="application/rss+xml" /><item>
     <title>Python-Matplotlib</title>
