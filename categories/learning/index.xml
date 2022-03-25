@@ -4,7 +4,14 @@
         <link>http://example.org/categories/learning/</link>
         <description>Learning - 分类 - 万事屋</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>yuanzhx@126.com (Yuan Z.X.)</managingEditor>
-            <webMaster>yuanzhx@126.com (Yuan Z.X.)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Thu, 21 Jan 2021 00:00:00 &#43;0800</lastBuildDate><atom:link href="http://example.org/categories/learning/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>yuanzhx@126.com (Yuan Z.X.)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Fri, 25 Mar 2022 00:00:00 &#43;0800</lastBuildDate><atom:link href="http://example.org/categories/learning/" rel="self" type="application/rss+xml" /><item>
+    <title>Python-Basic-Part2</title>
+    <link>http://example.org/learning-python-basic-part2/</link>
+    <pubDate>Fri, 25 Mar 2022 00:00:00 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/learning-python-basic-part2/</guid>
+    <description><![CDATA[Python基础部分的自学笔记]]></description>
+</item><item>
     <title>Python-Matplotlib</title>
     <link>http://example.org/learning-python-matplotlib/</link>
     <pubDate>Thu, 21 Jan 2021 00:00:00 &#43;0800</pubDate>
@@ -14,13 +21,11 @@
                 <img src="/images/learning/python-studying/plotfigure/coverpage-plot.png" referrerpolicy="no-referrer">
             </div>利用Python绘制出好看的科研数据图，将自己的绘图风格存储为模板，方便以后调用。同时，Python是一款开源软件，我们再也不用担心版权的问题了!]]></description>
 </item><item>
-    <title>Python-Basic</title>
-    <link>http://example.org/learning-python-basic/</link>
+    <title>Python-Basic-Part1</title>
+    <link>http://example.org/learning-python-basic-part1/</link>
     <pubDate>Fri, 25 Dec 2020 00:00:00 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>http://example.org/learning-python-basic/</guid>
-    <description><![CDATA[<div class="featured-image">
-                <img src="/images/learning/python-studying/basic/coverpage-basic.png" referrerpolicy="no-referrer">
-            </div>Python自用查询手册，笔记备忘之用。]]></description>
+    <guid>http://example.org/learning-python-basic-part1/</guid>
+    <description><![CDATA[Python基础部分的自学笔记]]></description>
 </item></channel>
 </rss>

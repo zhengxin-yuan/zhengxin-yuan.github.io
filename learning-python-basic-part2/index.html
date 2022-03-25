@@ -1,0 +1,994 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Python-Basic-Part2 - 万事屋</title><meta name="Description" content="Python基础部分的自学笔记"><meta property="og:title" content="Python-Basic-Part2" />
+<meta property="og:description" content="Python基础部分的自学笔记" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://example.org/learning-python-basic-part2/" />
+<meta property="og:image" content="http://example.org/logo.png"/>
+<meta property="article:published_time" content="2022-03-25T00:00:00+08:00" />
+<meta property="article:modified_time" content="2022-03-25T00:00:00+08:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="http://example.org/logo.png"/>
+
+<meta name="twitter:title" content="Python-Basic-Part2"/>
+<meta name="twitter:description" content="Python基础部分的自学笔记"/>
+<meta name="application-name" content="万事屋">
+<meta name="apple-mobile-web-app-title" content="万事屋"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/images/webicon.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://example.org/learning-python-basic-part2/" /><link rel="prev" href="http://example.org/learning-python-matplotlib/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Python-Basic-Part2",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/example.org\/learning-python-basic-part2\/"
+        },"genre": "posts","keywords": "Python, 学习笔记","wordcount":  3801 ,
+        "url": "http:\/\/example.org\/learning-python-basic-part2\/","datePublished": "2022-03-25T00:00:00+08:00","dateModified": "2022-03-25T00:00:00+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "yuanzhx","logo": "http:\/\/example.org\/images\/avatar.png"},"author": {
+                "@type": "Person",
+                "name": "Y. Z. X."
+            },"description": "Python基础部分的自学笔记"
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('dark' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'dark' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="万事屋"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw'></i></span>万事屋</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/journals/"> 期刊 </a><a class="menu-item" href="/resources/"> 资源 </a><a class="menu-item" href="/about/"> 关于 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="万事屋"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw'></i></span>万事屋</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/journals/" title="">期刊</a><a class="menu-item" href="/resources/" title="">资源</a><a class="menu-item" href="/about/" title="">关于</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content always-active" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">Python-Basic-Part2</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Y. Z. X.</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/learning/"><i class="far fa-folder fa-fw"></i>Learning</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-03-25">2022-03-25</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 3801 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 8 分钟&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#用户输入">用户输入</a>
+      <ul>
+        <li><a href="#用户输入是什么">用户输入是什么</a></li>
+        <li><a href="#获取数值输入">获取数值输入</a></li>
+        <li><a href="#求模运算符">求模运算符</a></li>
+      </ul>
+    </li>
+    <li><a href="#while-循环">while 循环</a>
+      <ul>
+        <li><a href="#while-循环是什么">while 循环是什么</a></li>
+        <li><a href="#while-循环怎么用">while 循环怎么用</a></li>
+        <li><a href="#让用户选择何时退出">让用户选择何时退出</a>
+          <ul>
+            <li><a href="#使用标志">使用标志</a></li>
+            <li><a href="#使用-break-退出循环">使用 break 退出循环</a></li>
+          </ul>
+        </li>
+        <li><a href="#在循环中使用-continue">在循环中使用 continue</a></li>
+        <li><a href="#避免无限循环">避免无限循环</a></li>
+        <li><a href="#使用-while-循环来处理列表和字典">使用 while 循环来处理列表和字典</a>
+          <ul>
+            <li><a href="#在列表之间移动元素">在列表之间移动元素</a></li>
+            <li><a href="#删除包含特定值的所有列表元素">删除包含特定值的所有列表元素</a></li>
+            <li><a href="#使用用户输入来填充字典">使用用户输入来填充字典</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#函数">函数</a>
+      <ul>
+        <li><a href="#函数是什么">函数是什么</a></li>
+        <li><a href="#函数怎么用">函数怎么用</a>
+          <ul>
+            <li><a href="#向函数传递信息">向函数传递信息</a></li>
+            <li><a href="#实参和形参">实参和形参</a></li>
+          </ul>
+        </li>
+        <li><a href="#传递实参">传递实参</a>
+          <ul>
+            <li><a href="#位置实参">位置实参</a></li>
+            <li><a href="#关键字实参">关键字实参</a></li>
+            <li><a href="#默认值">默认值</a></li>
+            <li><a href="#等效的函数调用">等效的函数调用</a></li>
+            <li><a href="#避免实参错误">避免实参错误</a></li>
+          </ul>
+        </li>
+        <li><a href="#返回值">返回值</a>
+          <ul>
+            <li><a href="#返回简单值">返回简单值</a></li>
+            <li><a href="#让实参变成可选的">让实参变成可选的</a></li>
+            <li><a href="#返回字典">返回字典</a></li>
+            <li><a href="#结合使用函数和-while-循环">结合使用函数和 while 循环</a></li>
+          </ul>
+        </li>
+        <li><a href="#传递列表">传递列表</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><hr>
+<h2 id="用户输入">用户输入</h2>
+<h3 id="用户输入是什么">用户输入是什么</h3>
+<p>函数<code>input()</code>让程序暂停运行，等待用户输入一些文本。获取用户输入后，Python将其存储在一个变量中，以方便你使用。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-Python" data-lang="Python"><span class="n">message</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&#34;Tell me something, and I will repeat it back to you: &#34;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>  
+</code></pre></td></tr></table>
+</div>
+</div><p>得到</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">Tell me something, and I will repeat it back to you: Hello everyone!
+Hello everyone!
+</code></pre></td></tr></table>
+</div>
+</div><p><font color="blue"><strong>注意:</strong></font> Sublime Text<strong>不能运行提示用户输入的程序</strong>。你可以使用Sublime Text来编写提示用户输入的程序，但必须从终端运行它们。</p>
+<p>可将提示存储在一个变量中，再将该变量传递给函数<code>input()</code>。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-Python" data-lang="Python"><span class="n">prompt</span> <span class="o">=</span> <span class="s2">&#34;If you tell us who you are, we can personalize the messages you see.&#34;</span>
+<span class="n">prompt</span> <span class="o">+=</span> <span class="s2">&#34;</span><span class="se">\n</span><span class="s2">What is your first name? &#34;</span>
+
+<span class="n">name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="n">prompt</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&#34;</span><span class="se">\n</span><span class="s2">Hello, &#34;</span> <span class="o">+</span> <span class="n">name</span> <span class="o">+</span> <span class="s2">&#34;!&#34;</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="获取数值输入">获取数值输入</h3>
+<p>使用函数<code>int()</code>实现</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-Python" data-lang="Python"><span class="n">height</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&#34;How tall are you, in inches? &#34;</span><span class="p">)</span>
+<span class="n">height</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">height</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">height</span> <span class="o">&gt;=</span> <span class="mi">36</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&#34;</span><span class="se">\n</span><span class="s2">You&#39;re tall enough to ride!&#34;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&#34;</span><span class="se">\n</span><span class="s2">You&#39;ll be able to ride when you&#39;re a little older.&#34;</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="求模运算符">求模运算符</h3>
+<p>处理数值信息时，求模运算符（<code>%</code>）是一个很有用的工具，它将两个数相除并返回余数：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-Python" data-lang="Python"><span class="o">&gt;&gt;&gt;</span> <span class="mi">4</span> <span class="o">%</span> <span class="mi">3</span>
+<span class="mi">1</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mi">5</span> <span class="o">%</span> <span class="mi">3</span>
+<span class="mi">2</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mi">6</span> <span class="o">%</span> <span class="mi">3</span>
+<span class="mi">0</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mi">7</span> <span class="o">%</span> <span class="mi">3</span>
+<span class="mi">1</span>
+</code></pre></td></tr></table>
+</div>
+</div><hr>
+<h2 id="while-循环">while 循环</h2>
+<h3 id="while-循环是什么">while 循环是什么</h3>
+<p>for循环用于针对集合中的每个元素都一个代码块，而while循环不断地运行，直到指定的条件不满足为止。</p>
+<h3 id="while-循环怎么用">while 循环怎么用</h3>
+<p>你可以使用while循环来数数，例如，下面的while循环从1数到5：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-Python" data-lang="Python"><span class="n">current_number</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="k">while</span> <span class="n">current_number</span> <span class="o">&lt;=</span> <span class="mi">5</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">current_number</span><span class="p">)</span>
+    <span class="n">current_number</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="c1">#1</span>
+<span class="c1">#2</span>
+<span class="c1">#3</span>
+<span class="c1">#4</span>
+<span class="c1">#5</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="让用户选择何时退出">让用户选择何时退出</h3>
+<p>可使用while循环让程序在用户愿意时不断地运行，如下面的程序</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-Python" data-lang="Python"><span class="n">prompt</span> <span class="o">=</span> <span class="s2">&#34;</span><span class="se">\n</span><span class="s2">Tell me something, and I will repeat it back to you:&#34;</span>
+<span class="n">prompt</span> <span class="o">+=</span> <span class="s2">&#34;</span><span class="se">\n</span><span class="s2">Enter &#39;quit&#39; to end the program. &#34;</span>
+
+<span class="n">message</span> <span class="o">=</span> <span class="s2">&#34;&#34;</span>
+<span class="k">while</span> <span class="n">message</span> <span class="o">!=</span> <span class="s1">&#39;quit&#39;</span><span class="p">:</span>
+    <span class="n">message</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="n">prompt</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">message</span> <span class="o">!=</span> <span class="s1">&#39;quit&#39;</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
+
+<span class="c1">#Tell me something, and I will repeat it back to you:</span>
+<span class="c1">#Enter &#39;quit&#39; to end the program. Hello everyone!</span>
+<span class="c1">#Hello everyone!</span>
+
+<span class="c1">#Tell me something, and I will repeat it back to you:</span>
+<span class="c1">#Enter &#39;quit&#39; to end the program. Hello again.</span>
+<span class="c1">#Hello again.</span>
+
+<span class="c1">#Tell me something, and I will repeat it back to you:</span>
+<span class="c1">#Enter &#39;quit&#39; to end the program. quit</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="使用标志">使用标志</h4>
+<p>可定义一个变量，用于判断整个程序是否处于活动状态，这个变量被称为<strong>标志</strong>。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-Python" data-lang="Python"><span class="n">prompt</span> <span class="o">=</span> <span class="s2">&#34;</span><span class="se">\n</span><span class="s2">Tell me something, and I will repeat it back to you:&#34;</span>
+<span class="n">prompt</span> <span class="o">+=</span> <span class="s2">&#34;</span><span class="se">\n</span><span class="s2">Enter &#39;quit&#39; to end the program. &#34;</span>
+
+<span class="n">active</span> <span class="o">=</span> <span class="bp">True</span>
+<span class="k">while</span> <span class="n">active</span><span class="p">:</span>
+    <span class="n">message</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="n">prompt</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">message</span> <span class="o">==</span> <span class="s1">&#39;quit&#39;</span><span class="p">:</span>
+        <span class="n">active</span> <span class="o">=</span> <span class="bp">False</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="使用-break-退出循环">使用 break 退出循环</h4>
+<p>要立即退出while循环，不再运行循环中余下的代码，也不管条件测试的结果如何，可使用break语句。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-Python" data-lang="Python"><span class="n">prompt</span> <span class="o">=</span> <span class="s2">&#34;</span><span class="se">\n</span><span class="s2">Please enter the name of a city you have visited:&#34;</span>
+<span class="n">prompt</span> <span class="o">+=</span> <span class="s2">&#34;</span><span class="se">\n</span><span class="s2">(Enter &#39;quit&#39; when you are finished.) &#34;</span>
+
+<span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+    <span class="n">city</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="n">prompt</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">city</span> <span class="o">==</span> <span class="s1">&#39;quit&#39;</span><span class="p">:</span>
+        <span class="k">break</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s2">&#34;I&#39;d love to go to &#34;</span> <span class="o">+</span> <span class="n">city</span><span class="o">.</span><span class="n">title</span><span class="p">()</span> <span class="o">+</span> <span class="s2">&#34;!&#34;</span><span class="p">)</span>
+
+<span class="c1">#Please enter the name of a city you have visited:</span>
+<span class="c1">#(Enter &#39;quit&#39; when you are finished.) New York</span>
+<span class="c1">#I&#39;d love to go to New York!</span>
+
+<span class="c1">#Please enter the name of a city you have visited:</span>
+<span class="c1">#(Enter &#39;quit&#39; when you are finished.) San Francisco</span>
+<span class="c1">#I&#39;d love to go to San Francisco!</span>
+
+<span class="c1">#Please enter the name of a city you have visited:</span>
+<span class="c1">#(Enter &#39;quit&#39; when you are finished.) quit</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><font color="blue"><strong>注意:</strong></font> 在任何Python循环中都可使用<code>break</code>语句。例如，可使用break语句来退出遍历列表或字典的for循环。</p>
+<h3 id="在循环中使用-continue">在循环中使用 continue</h3>
+<p>要返回到循环开头，并根据条件测试结果决定是否继续执行循环，可使用<code>continue</code>语句，它不像<code>break</code>语句那样不再执行余下的代码并退出整个循环。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-Python" data-lang="Python"><span class="n">current_number</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="n">current_number</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
+    <span class="n">current_number</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">if</span> <span class="n">current_number</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">continue</span>
+
+    <span class="k">print</span><span class="p">(</span><span class="n">current_number</span><span class="p">)</span>
+
+<span class="c1">#1</span>
+<span class="c1">#3</span>
+<span class="c1">#5</span>
+<span class="c1">#7</span>
+<span class="c1">#9</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>如果结果为0（意味着<code>current_number</code>可被2整除），就执行<code>continue</code>语句， 让Python忽略余下的代码，并返回到循环的开头。</p>
+<h3 id="避免无限循环">避免无限循环</h3>
+<p>每个<code>while</code>循环都必须有停止运行的途径，这样才不会没完没了地执行下去。</p>
+<p><strong>如果程序陷入无限循环，可按Ctrl + C，也可关闭显示程序输出的终端窗口。</strong></p>
+<p><font color="blue"><strong>注意:</strong></font> 有些编辑器（如Sublime Text）内嵌了输出窗口，这可能导致难以结束无限循环，因此不 得不关闭编辑器来结束无限循环。</p>
+<h3 id="使用-while-循环来处理列表和字典">使用 while 循环来处理列表和字典</h3>
+<p>到目前为止，我们每次都只处理了一项用户信息：获取用户的输入，再将输入打印出来或作出应答；循环再次运行时，我们获悉另一个输入值并作出响应。然而，要记录大量的用户和信息，需要在while循环中使用列表和字典。</p>
+<h4 id="在列表之间移动元素">在列表之间移动元素</h4>
+<p>使用一个<code>while</code>循环，在验证用户的同时将其从未验证用户列表中提取出来，再将其加入到另一个已验证用户列表中。代码可能类似于下面这样：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-Python" data-lang="Python"><span class="n">unconfirmed_users</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;alice&#39;</span><span class="p">,</span> <span class="s1">&#39;brian&#39;</span><span class="p">,</span> <span class="s1">&#39;candace&#39;</span><span class="p">]</span>
+<span class="n">confirmed_users</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">while</span> <span class="n">unconfirmed_users</span><span class="p">:</span>
+    <span class="n">current_user</span> <span class="o">=</span> <span class="n">unconfirmed_users</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+
+    <span class="k">print</span><span class="p">(</span><span class="s2">&#34;Verifying user: &#34;</span> <span class="o">+</span> <span class="n">current_user</span><span class="o">.</span><span class="n">title</span><span class="p">())</span>
+    <span class="n">confirmed_users</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">current_user</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s2">&#34;</span><span class="se">\n</span><span class="s2">The following users have been confirmed:&#34;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">confirmed_user</span> <span class="ow">in</span> <span class="n">confirmed_users</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">confirmed_user</span><span class="o">.</span><span class="n">title</span><span class="p">())</span>
+
+<span class="c1">#Verifying user: Candace</span>
+<span class="c1">#Verifying user: Brian</span>
+<span class="c1">#Verifying user: Alice</span>
+
+<span class="c1">#The following users have been confirmed:</span>
+<span class="c1">#Candace</span>
+<span class="c1">#Brian</span>
+<span class="c1">#Alice</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="删除包含特定值的所有列表元素">删除包含特定值的所有列表元素</h4>
+<p>假设你有一个宠物列表，其中包含多个值为&rsquo;cat&rsquo;的元素。要删除所有这些元素，可不断运行一个<code>while</code>循环，直到列表中不再包含值&rsquo;cat'，如下所示：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-Python" data-lang="Python"><span class="n">pets</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;dog&#39;</span><span class="p">,</span> <span class="s1">&#39;cat&#39;</span><span class="p">,</span> <span class="s1">&#39;dog&#39;</span><span class="p">,</span> <span class="s1">&#39;goldfish&#39;</span><span class="p">,</span> <span class="s1">&#39;cat&#39;</span><span class="p">,</span> <span class="s1">&#39;rabbit&#39;</span><span class="p">,</span> <span class="s1">&#39;cat&#39;</span><span class="p">]</span>
+<span class="k">print</span><span class="p">(</span><span class="n">pets</span><span class="p">)</span>
+
+<span class="k">while</span> <span class="s1">&#39;cat&#39;</span> <span class="ow">in</span> <span class="n">pets</span><span class="p">:</span>
+    <span class="n">pets</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s1">&#39;cat&#39;</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">pets</span><span class="p">)</span>
+
+<span class="c1">#[&#39;dog&#39;, &#39;cat&#39;, &#39;dog&#39;, &#39;goldfish&#39;, &#39;cat&#39;, &#39;rabbit&#39;, &#39;cat&#39;]</span>
+<span class="c1">#[&#39;dog&#39;, &#39;dog&#39;, &#39;goldfish&#39;, &#39;rabbit&#39;]</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="使用用户输入来填充字典">使用用户输入来填充字典</h4>
+<p>可使用<code>while</code>循环提示用户输入任意数量的信息。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-Python" data-lang="Python"><span class="n">responses</span> <span class="o">=</span> <span class="p">{}</span>
+
+<span class="n">polling_active</span> <span class="o">=</span> <span class="bp">True</span>
+
+<span class="k">while</span> <span class="n">polling_active</span><span class="p">:</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&#34;</span><span class="se">\n</span><span class="s2">What is your name? &#34;</span><span class="p">)</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&#34;Which mountain would you like to climb someday? &#34;</span><span class="p">)</span>
+
+    <span class="n">responses</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">response</span>
+
+    <span class="n">repeat</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&#34;Would you like to let another person respond? (yes/ no) &#34;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">repeat</span> <span class="o">==</span> <span class="s1">&#39;no&#39;</span><span class="p">:</span>
+        <span class="n">polling_active</span> <span class="o">=</span> <span class="bp">False</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s2">&#34;</span><span class="se">\n</span><span class="s2">--- Poll Results ---&#34;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">response</span> <span class="ow">in</span> <span class="n">responses</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">name</span> <span class="o">+</span> <span class="s2">&#34; would like to climb &#34;</span> <span class="o">+</span> <span class="n">response</span> <span class="o">+</span> <span class="s2">&#34;.&#34;</span><span class="p">)</span>
+
+
+<span class="c1"># What is your name? Eric</span>
+<span class="c1"># Which mountain would you like to climb someday? Denali</span>
+<span class="c1"># Would you like to let another person respond? (yes/ no) yes</span>
+
+<span class="c1"># What is your name? Lynn</span>
+<span class="c1"># Which mountain would you like to climb someday? Devil&#39;s Thumb</span>
+<span class="c1"># Would you like to let another person respond? (yes/ no) no</span>
+
+<span class="c1"># --- Poll Results ---</span>
+<span class="c1"># Lynn would like to climb Devil&#39;s Thumb.</span>
+<span class="c1"># Eric would like to climb Denali.</span>
+</code></pre></td></tr></table>
+</div>
+</div><hr>
+<h2 id="函数">函数</h2>
+<h3 id="函数是什么">函数是什么</h3>
+<p>函数是带名字的代码块，用于完 成具体的工作。</p>
+<h3 id="函数怎么用">函数怎么用</h3>
+<p>下面是一个打印问候语的简单函数，名为greet_user()：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-Python" data-lang="Python"><span class="k">def</span> <span class="nf">greet_user</span><span class="p">():</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&#34;Hello!&#34;</span><span class="p">)</span>
+
+<span class="n">greet_user</span><span class="p">()</span>
+
+<span class="c1"># Hello!</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>这个示例演示了最简单的函数结构。在这里，函数名为<code>greet_user()</code>，它不需要任何信息就能完成其工作，因此括号是空的（即便如此，括号也必不可少）。最后，定义以冒号结尾。</p>
+<p>紧跟在<code>def greet_user():</code>后面的所有缩进行构成了<strong>函数体</strong>，描述了函数是做什么的。</p>
+<h4 id="向函数传递信息">向函数传递信息</h4>
+<p>通过在这里添加username，就可让函数接受你给username指定的任何值。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-Python" data-lang="Python"><span class="k">def</span> <span class="nf">greet_user</span><span class="p">(</span><span class="n">username</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&#34;Hello, &#34;</span> <span class="o">+</span> <span class="n">username</span><span class="o">.</span><span class="n">title</span><span class="p">()</span> <span class="o">+</span> <span class="s2">&#34;!&#34;</span><span class="p">)</span>
+
+<span class="n">greet_user</span><span class="p">(</span><span class="s1">&#39;jesse&#39;</span><span class="p">)</span>
+
+<span class="c1"># Hello, Jesse!</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="实参和形参">实参和形参</h4>
+<p>在函数<code>greet_user()</code>的定义中，变量<code>username</code>是一个<strong>形参</strong>，函数完成其工作所需的一项信息。在代码<code>greet_user('jesse')</code>中，值<code>'jesse'</code>是一个<strong>实参</strong>。<strong>实参</strong>是调用函数时传递给函数的信息。我们调用函数时，将要让函数使用的信息放在括号内。在<code>greet_user('jesse')</code>中，将实参<code>'jesse'</code>传递给了函数<code>greet_user()</code>，这个值被存储在形参<code>username</code>中。</p>
+<p><font color="blue"><strong>注意:</strong></font> 大家有时候会形参、实参不分，因此如果你看到有人将函数定义中的变量称为实参或将函数调用中的变量称为形参，不要大惊小怪。</p>
+<h3 id="传递实参">传递实参</h3>
+<h4 id="位置实参">位置实参</h4>
+<p>你调用函数时，Python必须将函数调用中的每个实参都关联到函数定义中的一个形参。为此，最简单的关联方式是基于实参的顺序。这种关联方式被称为<strong>位置实参</strong>。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-Python" data-lang="Python"><span class="k">def</span> <span class="nf">describe_pet</span><span class="p">(</span><span class="n">animal_type</span><span class="p">,</span> <span class="n">pet_name</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&#34;</span><span class="se">\n</span><span class="s2">I have a &#34;</span> <span class="o">+</span> <span class="n">animal_type</span> <span class="o">+</span> <span class="s2">&#34;.&#34;</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&#34;My &#34;</span> <span class="o">+</span> <span class="n">animal_type</span> <span class="o">+</span> <span class="s2">&#34;&#39;s name is &#34;</span> <span class="o">+</span> <span class="n">pet_name</span><span class="o">.</span><span class="n">title</span><span class="p">()</span> <span class="o">+</span> <span class="s2">&#34;.&#34;</span><span class="p">)</span>
+
+<span class="n">describe_pet</span><span class="p">(</span><span class="s1">&#39;hamster&#39;</span><span class="p">,</span> <span class="s1">&#39;harry&#39;</span><span class="p">)</span>
+<span class="n">describe_pet</span><span class="p">(</span><span class="s1">&#39;dog&#39;</span><span class="p">,</span> <span class="s1">&#39;willie&#39;</span><span class="p">)</span>
+
+<span class="c1"># I have a hamster.</span>
+<span class="c1"># My hamster&#39;s name is Harry.</span>
+
+<span class="c1"># I have a dog.</span>
+<span class="c1"># My dog&#39;s name is Willie.</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><strong>位置实参的顺序很重要!</strong></p>
+<h4 id="关键字实参">关键字实参</h4>
+<p><strong>关键字实参</strong>是传递给函数的名称-值对，你直接在实参中将名称和值关联起来。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-Python" data-lang="Python"><span class="k">def</span> <span class="nf">describe_pet</span><span class="p">(</span><span class="n">animal_type</span><span class="p">,</span> <span class="n">pet_name</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&#34;</span><span class="se">\n</span><span class="s2">I have a &#34;</span> <span class="o">+</span> <span class="n">animal_type</span> <span class="o">+</span> <span class="s2">&#34;.&#34;</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&#34;My &#34;</span> <span class="o">+</span> <span class="n">animal_type</span> <span class="o">+</span> <span class="s2">&#34;&#39;s name is &#34;</span> <span class="o">+</span> <span class="n">pet_name</span><span class="o">.</span><span class="n">title</span><span class="p">()</span> <span class="o">+</span> <span class="s2">&#34;.&#34;</span><span class="p">)</span>
+
+<span class="n">describe_pet</span><span class="p">(</span><span class="n">animal_type</span><span class="o">=</span><span class="s1">&#39;hamster&#39;</span><span class="p">,</span> <span class="n">pet_name</span><span class="o">=</span><span class="s1">&#39;harry&#39;</span><span class="p">)</span>
+<span class="n">describe_pet</span><span class="p">(</span><span class="n">pet_name</span><span class="o">=</span><span class="s1">&#39;harry&#39;</span><span class="p">,</span> <span class="n">animal_type</span><span class="o">=</span><span class="s1">&#39;hamster&#39;</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><font color="blue"><strong>注意:</strong></font> 使用关键字实参时，务必准确地指定函数定义中的形参名。</p>
+<h4 id="默认值">默认值</h4>
+<p>例如，如果你发现调用<code>describe_pet()</code>时，描述的大都是小狗，就可将形参<code>animal_type</code>的默认值设置为<code>'dog'</code>。这样，调用<code>describe_pet()</code>来描述小狗时，就可不提供这种信息：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-Python" data-lang="Python"><span class="k">def</span> <span class="nf">describe_pet</span><span class="p">(</span><span class="n">pet_name</span><span class="p">,</span> <span class="n">animal_type</span><span class="o">=</span><span class="s1">&#39;dog&#39;</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&#34;</span><span class="se">\n</span><span class="s2">I have a &#34;</span> <span class="o">+</span> <span class="n">animal_type</span> <span class="o">+</span> <span class="s2">&#34;.&#34;</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&#34;My &#34;</span> <span class="o">+</span> <span class="n">animal_type</span> <span class="o">+</span> <span class="s2">&#34;&#39;s name is &#34;</span> <span class="o">+</span> <span class="n">pet_name</span><span class="o">.</span><span class="n">title</span><span class="p">()</span> <span class="o">+</span> <span class="s2">&#34;.&#34;</span><span class="p">)</span>
+
+<span class="n">describe_pet</span><span class="p">(</span><span class="n">pet_name</span><span class="o">=</span><span class="s1">&#39;willie&#39;</span><span class="p">)</span>
+
+<span class="c1"># I have a dog.</span>
+<span class="c1"># My dog&#39;s name is Willie.</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><font color="blue"><strong>注意:</strong></font> 使用默认值时，在形参列表中<strong>必须先列出没有默认值的形参</strong>，再列出有默认值的实参。这让Python依然能够正确地解读位置实参。</p>
+<h4 id="等效的函数调用">等效的函数调用</h4>
+<p>鉴于可混合使用位置实参、关键字实参和默认值，通常有多种等效的函数调用方式。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-Python" data-lang="Python"><span class="n">describe_pet</span><span class="p">(</span><span class="s1">&#39;willie&#39;</span><span class="p">)</span>
+<span class="n">describe_pet</span><span class="p">(</span><span class="n">pet_name</span><span class="o">=</span><span class="s1">&#39;willie&#39;</span><span class="p">)</span>
+
+<span class="n">describe_pet</span><span class="p">(</span><span class="s1">&#39;harry&#39;</span><span class="p">,</span> <span class="s1">&#39;hamster&#39;</span><span class="p">)</span>
+<span class="n">describe_pet</span><span class="p">(</span><span class="n">pet_name</span><span class="o">=</span><span class="s1">&#39;harry&#39;</span><span class="p">,</span> <span class="n">animal_type</span><span class="o">=</span><span class="s1">&#39;hamster&#39;</span><span class="p">)</span>
+<span class="n">describe_pet</span><span class="p">(</span><span class="n">animal_type</span><span class="o">=</span><span class="s1">&#39;hamster&#39;</span><span class="p">,</span> <span class="n">pet_name</span><span class="o">=</span><span class="s1">&#39;harry&#39;</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>这些函数调用的输出与前面的示例相同。</p>
+<p><font color="blue"><strong>注意:</strong></font> 使用哪种调用方式无关紧要，只要函数调用能生成你希望的输出就行。使用对你来说最容易理解的调用方式即可。</p>
+<h4 id="避免实参错误">避免实参错误</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-Python" data-lang="Python"><span class="k">def</span> <span class="nf">describe_pet</span><span class="p">(</span><span class="n">animal_type</span><span class="p">,</span> <span class="n">pet_name</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&#34;</span><span class="se">\n</span><span class="s2">I have a &#34;</span> <span class="o">+</span> <span class="n">animal_type</span> <span class="o">+</span> <span class="s2">&#34;.&#34;</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&#34;My &#34;</span> <span class="o">+</span> <span class="n">animal_type</span> <span class="o">+</span> <span class="s2">&#34;&#39;s name is &#34;</span> <span class="o">+</span> <span class="n">pet_name</span><span class="o">.</span><span class="n">title</span><span class="p">()</span> <span class="o">+</span> <span class="s2">&#34;.&#34;</span><span class="p">)</span>
+
+<span class="n">describe_pet</span><span class="p">()</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Python发现该函数调用缺少必要的信息，而traceback指出了这一点：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">Traceback (most recent call last):
+  File &#34;pets.py&#34;, line 6, in &lt;module&gt;
+    describe_pet()
+TypeError: describe_pet() missing 2 required positional arguments: &#39;animal_
+type&#39; and &#39;pet_name&#39;
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="返回值">返回值</h3>
+<p>函数并非总是直接显示输出，相反，它可以处理一些数据，并返回一个或一组值。</p>
+<h4 id="返回简单值">返回简单值</h4>
+<p>下面来看一个函数，它接受名和姓并返回整洁的姓名：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-Python" data-lang="Python"><span class="k">def</span> <span class="nf">get_formatted_name</span><span class="p">(</span><span class="n">first_name</span><span class="p">,</span> <span class="n">last_name</span><span class="p">):</span>
+    <span class="n">full_name</span> <span class="o">=</span> <span class="n">first_name</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span> <span class="o">+</span> <span class="n">last_name</span>
+    <span class="k">return</span> <span class="n">full_name</span><span class="o">.</span><span class="n">title</span><span class="p">()</span>
+
+<span class="n">musician</span> <span class="o">=</span> <span class="n">get_formatted_name</span><span class="p">(</span><span class="s1">&#39;jimi&#39;</span><span class="p">,</span> <span class="s1">&#39;hendrix&#39;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">musician</span><span class="p">)</span>
+
+<span class="c1"># Jimi Hendrix</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="让实参变成可选的">让实参变成可选的</h4>
+<p>让中间名变成可选的，可给实参<code>middle_name</code>指定一个默认值，空字符串。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-Python" data-lang="Python"><span class="k">def</span> <span class="nf">get_formatted_name</span><span class="p">(</span><span class="n">first_name</span><span class="p">,</span> <span class="n">last_name</span><span class="p">,</span> <span class="n">middle_name</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">middle_name</span><span class="p">:</span>
+        <span class="n">full_name</span> <span class="o">=</span> <span class="n">first_name</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span> <span class="o">+</span> <span class="n">middle_name</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span> <span class="o">+</span> <span class="n">last_name</span>
+    <span class="k">else</span><span class="p">:</span>
+      <span class="n">full_name</span> <span class="o">=</span> <span class="n">first_name</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span> <span class="o">+</span> <span class="n">last_name</span>
+    <span class="k">return</span> <span class="n">full_name</span><span class="o">.</span><span class="n">title</span><span class="p">()</span>
+
+<span class="n">musician</span> <span class="o">=</span> <span class="n">get_formatted_name</span><span class="p">(</span><span class="s1">&#39;jimi&#39;</span><span class="p">,</span> <span class="s1">&#39;hendrix&#39;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">musician</span><span class="p">)</span>
+
+<span class="n">musician</span> <span class="o">=</span> <span class="n">get_formatted_name</span><span class="p">(</span><span class="s1">&#39;john&#39;</span><span class="p">,</span> <span class="s1">&#39;hooker&#39;</span><span class="p">,</span> <span class="s1">&#39;lee&#39;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">musician</span><span class="p">)</span>
+
+<span class="c1"># Jimi Hendrix</span>
+<span class="c1"># John Lee Hooker</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>可选值让函数能够处理各种不同情形的同时，确保函数调用尽可能简单。</p>
+<h4 id="返回字典">返回字典</h4>
+<p>函数可返回任何类型的值，包括列表和字典等较复杂的数据结构。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-Python" data-lang="Python"><span class="k">def</span> <span class="nf">build_person</span><span class="p">(</span><span class="n">first_name</span><span class="p">,</span> <span class="n">last_name</span><span class="p">,</span> <span class="n">age</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">):</span>
+    <span class="n">person</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;first&#39;</span><span class="p">:</span> <span class="n">first_name</span><span class="p">,</span> <span class="s1">&#39;last&#39;</span><span class="p">:</span> <span class="n">last_name</span><span class="p">}</span>
+    <span class="k">if</span> <span class="n">age</span><span class="p">:</span>
+        <span class="n">person</span><span class="p">[</span><span class="s1">&#39;age&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">age</span>
+    <span class="k">return</span> <span class="n">person</span>
+
+<span class="n">musician</span> <span class="o">=</span> <span class="n">build_person</span><span class="p">(</span><span class="s1">&#39;jimi&#39;</span><span class="p">,</span> <span class="s1">&#39;hendrix&#39;</span><span class="p">,</span> <span class="n">age</span><span class="o">=</span><span class="mi">27</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">musician</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>在函数定义中，我们新增了一个可选形参age，并将其默认值设置为空字符串。如果函数调用中包含这个形参的值，这个值将存储到字典中。在任何情况下，这个函数都会存储人的姓名，但可对其进行修改，使其也存储有关人的其他信息。</p>
+<h4 id="结合使用函数和-while-循环">结合使用函数和 while 循环</h4>
+<p>下面尝试使用名和姓跟用户打招呼：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-Python" data-lang="Python"><span class="k">def</span> <span class="nf">get_formatted_name</span><span class="p">(</span><span class="n">first_name</span><span class="p">,</span> <span class="n">last_name</span><span class="p">):</span>
+    <span class="n">full_name</span> <span class="o">=</span> <span class="n">first_name</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span> <span class="o">+</span> <span class="n">last_name</span>
+    <span class="k">return</span> <span class="n">full_name</span><span class="o">.</span><span class="n">title</span><span class="p">()</span>
+
+<span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&#34;</span><span class="se">\n</span><span class="s2">Please tell me your name:&#34;</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&#34;(enter &#39;q&#39; at any time to quit)&#34;</span><span class="p">)</span>
+
+    <span class="n">f_name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&#34;First name: &#34;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">f_name</span> <span class="o">==</span> <span class="s1">&#39;q&#39;</span><span class="p">:</span>
+        <span class="k">break</span>
+
+    <span class="n">l_name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&#34;Last name: &#34;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">l_name</span> <span class="o">==</span> <span class="s1">&#39;q&#39;</span><span class="p">:</span>
+        <span class="k">break</span>
+
+    <span class="n">formatted_name</span> <span class="o">=</span> <span class="n">get_formatted_name</span><span class="p">(</span><span class="n">f_name</span><span class="p">,</span> <span class="n">l_name</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&#34;</span><span class="se">\n</span><span class="s2">Hello, &#34;</span> <span class="o">+</span> <span class="n">formatted_name</span> <span class="o">+</span> <span class="s2">&#34;!&#34;</span><span class="p">)</span>
+
+<span class="c1"># Please tell me your name:</span>
+<span class="c1"># (enter &#39;q&#39; at any time to quit)</span>
+<span class="c1"># First name: eric</span>
+<span class="c1"># Last name: matthes</span>
+
+<span class="c1"># Hello, Eric Matthes!</span>
+
+<span class="c1"># Please tell me your name:</span>
+<span class="c1"># (enter &#39;q&#39; at any time to quit)</span>
+<span class="c1"># First name: q</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="传递列表">传递列表</h3>
+<p>假设有一个用户列表，我们要问候其中的每位用户。下面的示例将一个名字列表传递给一个名为<code>greet_users()</code>的函数，这个函数问候列表中的每个人：</p></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2022-03-25</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/learning-python-basic-part2/index.md" target="_blank">阅读原始文档</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="http://example.org/learning-python-basic-part2/" data-title="Python-Basic-Part2"><i class="fab fa-evernote fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/python/">Python</a>,&nbsp;<a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/learning-python-matplotlib/" class="prev" rel="prev" title="Python-Matplotlib"><i class="fas fa-angle-left fa-fw"></i>Python-Matplotlib</a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.80.0">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">Yuan Z.X.</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/twemoji/twemoji.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js"></script><script type="text/javascript" src="/lib/katex/auto-render.min.js"></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js"></script><script type="text/javascript" src="/lib/katex/mhchem.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":35},"comment":{},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"},"twemoji":true};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>
