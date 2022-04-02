@@ -27,7 +27,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "http:\/\/example.org\/learning-python-basic-part2\/"
-        },"genre": "posts","keywords": "Python, 学习笔记","wordcount":  3801 ,
+        },"genre": "posts","keywords": "Python, 学习笔记","wordcount":  3878 ,
         "url": "http:\/\/example.org\/learning-python-basic-part2\/","datePublished": "2022-03-25T00:00:00+08:00","dateModified": "2022-03-25T00:00:00+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
             "@type": "Organization",
             "name": "yuanzhx","logo": "http:\/\/example.org\/images\/avatar.png"},"author": {
@@ -104,7 +104,7 @@
             <div class="toc-content always-active" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Python-Basic-Part2</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Y. Z. X.</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/learning/"><i class="far fa-folder fa-fw"></i>Learning</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-03-25">2022-03-25</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 3801 字&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-03-25">2022-03-25</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 3878 字&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 8 分钟&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
@@ -167,7 +167,11 @@
             <li><a href="#结合使用函数和-while-循环">结合使用函数和 while 循环</a></li>
           </ul>
         </li>
-        <li><a href="#传递列表">传递列表</a></li>
+        <li><a href="#传递列表">传递列表</a>
+          <ul>
+            <li><a href="#在函数中修改列表-841">在函数中修改列表 8.4.1</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
   </ul>
@@ -951,7 +955,37 @@ type&#39; and &#39;pet_name&#39;
 </code></pre></td></tr></table>
 </div>
 </div><h3 id="传递列表">传递列表</h3>
-<p>假设有一个用户列表，我们要问候其中的每位用户。下面的示例将一个名字列表传递给一个名为<code>greet_users()</code>的函数，这个函数问候列表中的每个人：</p></div><div class="post-footer" id="post-footer">
+<p>假设有一个用户列表，我们要问候其中的每位用户。下面的示例将一个名字列表传递给一个名为<code>greet_users()</code>的函数，这个函数问候列表中的每个人：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-Python" data-lang="Python"><span class="k">def</span> <span class="nf">greet_users</span><span class="p">(</span><span class="n">names</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">names</span><span class="p">:</span>
+        <span class="n">msg</span> <span class="o">=</span> <span class="s2">&#34;Hello, &#34;</span> <span class="o">+</span> <span class="n">name</span><span class="o">.</span><span class="n">title</span><span class="p">()</span> <span class="o">+</span> <span class="s2">&#34;!&#34;</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+
+<span class="n">usernames</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;hannah&#39;</span><span class="p">,</span> <span class="s1">&#39;ty&#39;</span><span class="p">,</span> <span class="s1">&#39;margot&#39;</span><span class="p">]</span>
+<span class="n">greet_users</span><span class="p">(</span><span class="n">usernames</span><span class="p">)</span>
+
+<span class="c1"># Hello, Hannah!</span>
+<span class="c1"># Hello, Ty!</span>
+<span class="c1"># Hello, Margot!</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>输出完全符合预期，每位用户都看到了一条个性化的问候语。</p>
+<h4 id="在函数中修改列表-841">在函数中修改列表 8.4.1</h4></div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">

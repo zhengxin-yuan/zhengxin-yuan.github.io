@@ -444,4 +444,20 @@ while True:
 
 ### 传递列表
 假设有一个用户列表，我们要问候其中的每位用户。下面的示例将一个名字列表传递给一个名为`greet_users()`的函数，这个函数问候列表中的每个人：
+```Python
+def greet_users(names):
+    for name in names:
+        msg = "Hello, " + name.title() + "!"
+        print(msg)
+
+usernames = ['hannah', 'ty', 'margot']
+greet_users(usernames)
+
+# Hello, Hannah!
+# Hello, Ty!
+# Hello, Margot!
+```
+输出完全符合预期，每位用户都看到了一条个性化的问候语。
+
+#### 在函数中修改列表 8.4.1
 
