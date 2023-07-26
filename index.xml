@@ -36,26 +36,5 @@
     <author>作者</author>
     <guid>http://example.org/science-endnote/</guid>
     <description><![CDATA[通过文献管理软件EndNoteX9，实现中英文参考文献混排效果，帮助你轻松完成学位论文，毕业撒花！]]></description>
-</item><item>
-    <title>土工筛分法相关参考规范</title>
-    <link>http://example.org/science-sieve/</link>
-    <pubDate>Fri, 20 Dec 2019 00:00:00 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>http://example.org/science-sieve/</guid>
-    <description><![CDATA[土体的颗粒大小和颗粒级配在土木工程中，特别是在岩土工程中，扮演着重要的地位。]]></description>
-</item><item>
-    <title>LaTeX安装</title>
-    <link>http://example.org/science-latex/</link>
-    <pubDate>Sun, 15 Dec 2019 00:00:00 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>http://example.org/science-latex/</guid>
-    <description><![CDATA[LaTeX安装]]></description>
-</item><item>
-    <title>扫描电镜简介</title>
-    <link>http://example.org/science-sem/</link>
-    <pubDate>Sun, 01 Dec 2019 00:00:00 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>http://example.org/science-sem/</guid>
-    <description><![CDATA[简单介绍扫描电镜及其实验基本知识，部分内容源于作者自身经验，非规定或实验标准，仅作学习交流用。]]></description>
 </item></channel>
 </rss>

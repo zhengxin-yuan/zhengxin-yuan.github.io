@@ -10,8 +10,6 @@
             <loc>http://example.org/tags/</loc><lastmod>2022-03-25T00:00:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://example.org/</loc><lastmod>2022-03-25T00:00:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://example.org/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc><lastmod>2022-03-25T00:00:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>http://example.org/about/</loc><lastmod>2022-03-20T00:00:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>http://example.org/journals/</loc><lastmod>2022-03-20T00:00:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://example.org/learning-python-matplotlib/</loc><lastmod>2021-01-28T00:00:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://example.org/tags/%E7%A7%91%E7%A0%94%E7%BB%98%E5%9B%BE/</loc><lastmod>2021-01-28T00:00:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://example.org/learning-python-basic-part1/</loc><lastmod>2022-03-25T00:00:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
@@ -19,13 +17,4 @@
             <loc>http://example.org/science-endnote/</loc><lastmod>2021-01-28T00:00:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://example.org/categories/science/</loc><lastmod>2021-01-28T00:00:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://example.org/tags/%E4%B8%AD%E8%8B%B1%E6%96%87%E6%B7%B7%E6%8E%92/</loc><lastmod>2021-01-28T00:00:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>http://example.org/tags/%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE/</loc><lastmod>2021-01-28T00:00:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>http://example.org/tags/astm/</loc><lastmod>2021-01-28T00:00:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>http://example.org/science-sieve/</loc><lastmod>2021-01-28T00:00:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>http://example.org/tags/%E7%AD%9B%E5%88%86%E6%B3%95/</loc><lastmod>2021-01-28T00:00:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>http://example.org/tags/latex/</loc><lastmod>2021-01-28T00:00:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>http://example.org/science-latex/</loc><lastmod>2021-01-28T00:00:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>http://example.org/tags/sem/</loc><lastmod>2021-01-28T00:00:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>http://example.org/tags/%E6%89%AB%E6%8F%8F%E7%94%B5%E9%95%9C/</loc><lastmod>2021-01-28T00:00:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>http://example.org/science-sem/</loc><lastmod>2021-01-28T00:00:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>http://example.org/resources/</loc><lastmod>2019-10-02T00:00:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url></urlset>
+            <loc>http://example.org/tags/%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE/</loc><lastmod>2021-01-28T00:00:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url></urlset>
